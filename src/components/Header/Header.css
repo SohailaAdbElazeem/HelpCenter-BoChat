@@ -1,0 +1,52 @@
+.main-section {
+	background-color: #d72229;
+}
+.main-section .header {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 80%;
+	max-width: 1400px;
+	height: 65px;
+	padding: 40px;
+}
+.logo-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.logo-container img {
+	width: 30.52px;
+	height: 37px;
+	/* filter: brightness(0); */
+
+	/* width: 44;
+height: 52; */
+}
+.logo-text {
+	color: #000000;
+	font-family: Cairo;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 45px;
+	vertical-align: middle;
+}
+.line {
+	width: 1.5px;
+	height: 35px;
+	background-color: #fff;
+	display: inline-block;
+}
+.translate {
+	background-color: #fff;
+	width: 92px;
+	height: 35px;
+	text-align: center;
+	color: #d72229;
+	font-weight: 500;
+	font-size: 18px;
+	border-radius: 15px;
+	border: none;
+	cursor: pointer;
+}

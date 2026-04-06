@@ -1,0 +1,260 @@
+/* Background Gradient */
+.home-container {
+  min-height: 100vh;
+  padding: 50px;
+  background: linear-gradient(180deg, #D72229 30%, rgba(215, 34, 41, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* H1 */
+.home-title {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 600;
+  font-size: 85px;
+  line-height: 140%;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #FFFFFF;
+  width: 51.3125rem;
+}
+
+/* Search */
+/* .search-container {
+  position: relative;
+  width: 1032px;
+  height: 65px;
+  margin-bottom: 30px;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  padding-left: 50px;
+  padding-right: 25px;
+  border-radius: 22px;
+  border: none;
+  background: #FFFFFFE5;
+  box-shadow: 0px 4px 4px 0px #0000000D;
+  font-size: 20px;
+   color:#5E5E5E;
+    direction: rtl;       
+  text-align: right;   
+}
+
+.search-icon {
+    width: 30px;
+    height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: #5E5E5E;
+} */
+
+/* Boxes Section */
+.boxes-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.box {
+  width: 331px;
+  height: 200px;
+  border-radius: 22px;
+  background: #FFFFFFE5;
+  /* backdrop-filter: blur(15px); */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+  backdrop-filter: blur(15px)
+}
+
+.box .card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  text-align: right;      
+  padding: 0 15px; 
+   background: transparent;
+    border: none;              /* ✅ يشيل البوردر لو موجود */
+  box-shadow: none;  
+ }
+
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+}
+.card .icon-box {
+    width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;             /* ✅ اجعل العنصر flex */
+  justify-content: center;   /* ✅ أفقياً في الوسط */
+  align-items: center; 
+}
+/* Join Button */
+.join-button {
+  width: 1033px;
+  height: 70px;
+  border-radius: 22px;
+  background: #FFFFFFE5;
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+backdrop-filter: blur(15px)
+
+}
+/* proplem */
+.proplem {
+   
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* background-color: #EDEDEDE5; */
+ 
+}
+.proplem .proplem-img {
+    
+}
+
+.proplem {
+     margin: 20px 0;
+    width: 1033px;
+    height: 70px;
+  display: flex;                  /* arrange items in a row */
+  align-items: center;            /* vertical centering */
+  justify-content: space-between; /* space between icon-text-button */
+  background: #efcdcde5;          /* خلفية شبه شفافة */
+  border-radius: 15px;
+  padding: 15px 20px;             /* مسافة داخلية */
+  box-shadow: 0px 4px 4px 0px #0000000D; /* optional */
+  gap: 20px;                      /* مسافة بين العناصر */
+     border-radius: 20px;
+    backdrop-filter: blur(15px);
+}
+
+.proplem-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;                 /* منع تقلص الحجم */
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.proplem-text {
+  flex: 1;                        /* تاخد كل المساحة المتاحة للنص */
+  text-align: right;               /* النص على اليمين */
+ }
+
+.proplem-text h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.proplem-text p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.prolem-btn {
+  background-color: #FFFFFF;
+  color:#D72229 ;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;            /* منع كسر السطر */
+}
+
+/* .prolem-btn:hover {
+  background-color: #b81b24; 
+} */
+
+/* Question */
+.questions-section{
+    width: 80%;
+    margin: 0 auto;
+
+}
+.question {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+}
+
+.question p {
+  flex: 1;
+  margin: 0 8px;
+  text-align: right; /* RTL */
+}
+
+.question-item {
+  text-align: right;
+  gap: 20px;
+  padding: 10px 20px;
+  background-color: #EDEDED;
+  border-radius: 28px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.question img {
+  width: 20px;
+  transition: 0.3s;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.answer p {
+  color: #8D8D8D;
+}
+
+.question-item.active .answer {
+  max-height: 500px; /* قابل للتغيير حسب طول النص */
+  padding: 0 20px 20px 20px;
+}
+
+.question-item.active .toggle-icon {
+  transform: rotate(45deg);
+}
+.faq-link-wrapper {
+  display: flex;
+  justify-content: center;   /* توسيط أفقي */
+  margin-top: 20px;
+}
+
+.faq-link span {
+  color: #D72229;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+}
