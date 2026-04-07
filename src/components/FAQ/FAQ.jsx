@@ -1,31 +1,14 @@
 import React from "react";
 import "./FAQ.modules.CSS";
 import Search from "../Search/Search";
-
-const questionsData = [
-	{
-		question:
-			"في حال فقدت هاتفي كيف يمكنني استعادة حسابي دون المساس بخصوصية بياناتي القديمة؟",
-	},
-	{ question: "كيف يمكنني تخصيص واجهة التطبيق لتناسب ذوقي الشخصي؟" },
-	{
-		question:
-			"هل يستهلك التطبيق مساحة تخزين كبيرة أو يؤثر على أداء بطارية الهاتف؟",
-	},
-	{ question: "كيف يمكنني دعوة أصدقائي للانضمام وتجربة الفصل الجديد معكم؟" },
-	{
-		question:
-			"في حال فقدت هاتفي كيف يمكنني استعادة حسابي دون المساس بخصوصية بياناتي القديمة؟",
-	},
-	{ question: "كيف يمكنني تخصيص واجهة التطبيق لتناسب ذوقي الشخصي؟" },
-	{
-		question:
-			"هل يستهلك التطبيق مساحة تخزين كبيرة أو يؤثر على أداء بطارية الهاتف؟",
-	},
-	{ question: "كيف يمكنني دعوة أصدقائي للانضمام وتجربة الفصل الجديد معكم؟" },
-];
+import { useTranslation } from "react-i18next";
 
 export default function FAQ() {
+	const { t, i18n } = useTranslation();
+	const isLTR = i18n.language === "en";
+
+	const questionsData = t("faq.questions", { returnObjects: true });
+
 	return (
 		<div>
 			<div
@@ -51,9 +34,13 @@ export default function FAQ() {
 								fontSize: "clamp(20px, 8vw, 65px)",
 								lineHeight: "clamp(20px, 6vw, 55px)",
 								margin: "clamp(10px, 10vw, 90px) 0 clamp(10px, 8vw, 60px) 0",
+								textAlign: isLTR ? "left" : "right",
+								direction: isLTR ? "ltr" : "rtl",
+								//  unicodeBidi: isLTR ? "plaintext" : "normal",
+								unicodeBidi: "plaintext",
 							}}
 						>
-							الأسئلة الشائعة
+							{t("faq.title")}
 						</div>
 					</div>
 
@@ -74,6 +61,7 @@ export default function FAQ() {
 										borderRadius: "clamp(16px, 5vw, 28px)",
 										margin: "0 auto",
 										gap: "clamp(8px, 2vw, 15px)",
+										flexDirection: isLTR ? "row-reverse" : "row",
 									}}
 								>
 									{/* Red Dot */}
@@ -87,15 +75,17 @@ export default function FAQ() {
 
 									{/* Question Text */}
 									<span
-										className="text-danger fw-semibold flex-grow-1 text-end"
+										className="text-danger fw-semibold flex-grow-1"
 										style={{
 											fontFamily: "'Cairo', sans-serif",
 											fontSize: "clamp(10px, 4vw, 18px)",
 											lineHeight: "1.4",
 											wordBreak: "break-word",
+											textAlign: isLTR ? "left" : "right",
+											direction: isLTR ? "ltr" : "rtl",
 										}}
 									>
-										{item.question}
+										{item}
 									</span>
 								</div>
 							</div>

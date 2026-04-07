@@ -1,6 +1,10 @@
 .questions-section {
 	width: 80%;
 	margin: 0 auto;
+	direction: rtl;
+}
+.questions-section.ltr {
+	direction: ltr;
 }
 .question {
 	display: flex;

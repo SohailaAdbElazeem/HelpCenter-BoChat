@@ -1,7 +1,18 @@
 import "./Header.modules.css";
 import logo from "../../assests/logo (2).png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 export default function Header() {
+	const { i18n, t } = useTranslation();
+
+	const toggleLanguage = () => {
+		const newLang = i18n.language === "ar" ? "en" : "ar";
+		i18n.changeLanguage(newLang);
+		localStorage.setItem("lang", newLang);
+		document.body.dir = newLang === "ar" ? "rtl" : "ltr";
+	};
+
 	return (
 		<div className="main-section">
 			<div className="header">
@@ -11,13 +22,12 @@ export default function Header() {
 					</Link>
 					<span className="line"></span>
 					<Link className="logo-text" to="/">
-						المساعدة
+						{t("header.help")}
 					</Link>
 				</div>
 
-				{/* Translate Button */}
-				<button className="translate" id="translateBtn">
-					English
+				<button className="translate" onClick={toggleLanguage}>
+					{i18n.language === "ar" ? "English" : "عربي"}
 				</button>
 			</div>
 		</div>

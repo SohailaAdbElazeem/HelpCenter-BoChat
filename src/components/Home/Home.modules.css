@@ -17,6 +17,9 @@
 	color: #ffffff;
 	width: 51.3125rem;
 }
+.home-title.en {
+	font-size: clamp(24px, 4vw, 60px);
+}
 /* Boxes Section */
 .boxes-section {
 	display: grid;
@@ -24,6 +27,13 @@
 	gap: 20px;
 	width: 100%;
 	max-width: 1100px;
+	direction: rtl;
+}
+.boxes-section.ltr {
+	direction: ltr;
+}
+.boxes-section.ltr h3 {
+	font-size: 20px;
 }
 .box {
 	width: 100%;
@@ -156,24 +166,53 @@
 	white-space: nowrap;
 }
 
+.proplem.ltr {
+	flex-direction: row-reverse;
+}
+
+.proplem.rtl {
+	flex-direction: row;
+}
+.proplem.rtl .proplem-text {
+	text-align: right;
+}
+
+.proplem.ltr .proplem-text {
+	text-align: left;
+	direction: ltr;
+}
 /* Question */
 .questions-section {
 	width: 80%;
 	margin: 0 auto;
+	direction: rtl;
+}
+.questions-section.ltr {
+	text-align: left;
+	direction: ltr;
 }
 .question {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	min-height: 40px;
+	direction: rtl;
 }
-
+.questions-section.ltr .question {
+	direction: ltr;
+}
+.questions-section h2 {
+	margin-bottom: 20px;
+}
 .question p {
 	flex: 1;
 	margin: 0 8px;
 	text-align: right;
 }
 
+.questions-section.ltr .question p {
+	text-align: left;
+}
 .question-item {
 	text-align: right;
 	gap: 20px;
@@ -185,7 +224,9 @@
 	cursor: pointer;
 	margin-bottom: 10px;
 }
-
+.questions-section.ltr .question-item {
+	text-align: left;
+}
 .question img {
 	width: 20px;
 	transition: 0.3s;

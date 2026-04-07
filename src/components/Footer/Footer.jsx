@@ -5,36 +5,46 @@ import facebook from "../../assests/facebook.svg";
 import youtube from "../../assests/youtube.svg";
 import tiktok from "../../assests/tiktok.svg";
 import logo from "../../assests/logo (2).png";
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+	const { t, i18n } = useTranslation();
+
 	return (
-		<footer className="main-footer">
+		<footer className={`main-footer ${i18n.language === "en" ? "ltr" : "rtl"}`}>
 			<div className="footer-grid">
 				{/* Company */}
 				<div className="footer-column">
-					<h3>الشركة</h3>
+					<h3>{t("footer.company.title")}</h3>
 					<ul>
 						<li>
-							<a href="https://bo-eg.site/AboutUs.html">عن الشركة</a>
+							<a href="https://bo-eg.site/AboutUs.html">
+								{t("footer.company.about")}
+							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/ContactUs.html">اتصل بنا</a>
+							<a href="https://bo-eg.site/ContactUs.html">
+								{t("footer.company.contact")}
+							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/AboutUs.html">معلومات عنا</a>
+							<a href="https://bo-eg.site/AboutUs.html">
+								{t("footer.company.info")}
+							</a>
 						</li>
 						<li>
-							<a href="/">المساعدة</a>
+							<a href="/">{t("footer.company.help")}</a>
 						</li>
 					</ul>
 				</div>
 
-				{/*  */}
+				{/* Find Us */}
 				<div className="footer-column">
-					<h3>أين تجدنا</h3>
+					<h3>{t("footer.findUs.title")}</h3>
 					<ul>
 						<li>
 							<a href="https://apps.apple.com/us/app/bo-chat/id6749073096">
-								متجر تطبيقات iOS
+								{t("footer.findUs.ios")}
 							</a>
 						</li>
 						<li>
@@ -43,41 +53,45 @@ export default function Footer() {
 								target="_blank"
 								rel="noreferrer"
 							>
-								جوجل بلاي أندرويد
+								{t("footer.findUs.android")}
 							</a>
 						</li>
 						<li>
-							<a href="/">متجر تطبيقات شاومي</a>
+							<a href="/">{t("footer.findUs.xiaomi")}</a>
 						</li>
 					</ul>
 				</div>
 
-				{/*  */}
+				{/* Legal */}
 				<div className="footer-column">
-					<h3>القانون</h3>
+					<h3>{t("footer.legal.title")}</h3>
 					<ul>
 						<li>
 							<a href="https://bo-eg.site/PrivacyPolicies.html">
-								سياسة الخصوصية
+								{t("footer.legal.privacy")}
 							</a>
 						</li>
 						<li>
 							<a href="https://bo-eg.site/SocialGuiedLines.html">
-								قواعد المجتمع
+								{t("footer.legal.guidelines")}
 							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/BoShield.html">سياسة الطبع والنشر</a>
+							<a href="https://bo-eg.site/BoShield.html">
+								{t("footer.legal.copyright")}
+							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/PrivacyCenter.html">مركز الخصوصية</a>
+							<a href="https://bo-eg.site/PrivacyCenter.html">
+								{t("footer.legal.privacyCenter")}
+							</a>
 						</li>
 					</ul>
 				</div>
 
 				{/* Social */}
 				<div className="footer-column">
-					<h3>المجتمع</h3>
+					<h3>{t("footer.social.title")}</h3>
 					<div className="social-icons">
 						<a
 							href="https://www.linkedin.com/company/bo-chat/"
@@ -116,7 +130,7 @@ export default function Footer() {
 
 			{/* Bottom */}
 			<div className="footer-bottom">
-				<p>جميع الحقوق محفوظة © لشركة باندا اوريكال لتقنية المعلومات 2025</p>
+				<p>{t("footer.bottom")}</p>
 			</div>
 		</footer>
 	);

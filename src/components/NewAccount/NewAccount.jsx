@@ -1,19 +1,25 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Search from "../Search/Search";
+
 export default function NewAccount() {
+	const { t, i18n } = useTranslation();
+	const isLTR = i18n.language === "en";
+
 	return (
 		<div
 			className="min-vh-100 d-flex align-items-center justify-content-center p-4"
 			style={{
 				background:
 					"linear-gradient(180deg, #D72229 30%, rgba(215, 34, 41, 0) 100%)",
+				direction: isLTR ? "ltr" : "rtl",
 			}}
 		>
 			<div className="w-100" style={{ maxWidth: "1050px", margin: "0 auto" }}>
-				{/* Search  */}
+				{/* Search */}
 				<Search />
 
-				{/* Header - B */}
+				{/* Header */}
 				<div className="mb-5">
 					<div
 						className="fw-bold"
@@ -24,49 +30,53 @@ export default function NewAccount() {
 							fontSize: "clamp(30px, 8vw, 65px)",
 							lineHeight: "clamp(25px, 5vw, 45px)",
 							margin: "clamp(20px, 10vw, 90px) 0 clamp(20px, 8vw, 60px) 0",
+							textAlign: isLTR ? "left" : "right",
 						}}
 					>
-						إنشاء حساب جديد{" "}
+						{t("newAccount.title")}
 					</div>
 				</div>
 
 				<div
-					className="d-flex align-items-center "
-					style={{ color: "#ffffff" }}
+					className={`d-flex align-items-center ${!isLTR ? "flex-row-reverse" : ""}`}
+					style={{
+						color: "#ffffff",
+						justifyContent: isLTR ? "flex-start" : "flex-end",
+						gap: "10px",
+					}}
 				>
-					<p className="ms-5">آخر تحديث: [أبريل 2025]</p>
-					<p>تم التحديث</p>
+					<p className={isLTR ? "me-4" : "ms-5"}>
+						{t("newAccount.lastUpdated")} [{t("newAccount.april2025")}]
+					</p>
+					<p>{t("newAccount.updated")}</p>
 				</div>
-				<div className="stpes">
-					<h5>الخطوات:</h5>
+
+				<div className="steps" style={{ textAlign: isLTR ? "left" : "right" }}>
+					<h5>{t("newAccount.steps")}</h5>
 					<ol className="mx-3">
-						<li>افتح التطبيق.</li>
-						<li>اضغط على إنشاء حساب.</li>
-						<li>أدخل اسمك الكامل، عنوان بريدك الإلكتروني، وتاريخ ميلادك.</li>
-						<li>اضغط على التالي.</li>
-						<li>أنشئ كلمة مرور قوية.</li>
-						<li>أكّد بريدك الإلكتروني (مهم للخطوة التالية).</li>
-						<li>
-							ستصلك رسالة تحقق عبر البريد الإلكتروني — أدخل الرمز واضغط
-							على تحقق.
-						</li>
-						<li>اختر المعرّف @ الخاص بك.</li>
-						<li>اضغط على تسجيل.</li>
+						<li>{t("newAccount.step1")}</li>
+						<li>{t("newAccount.step2")}</li>
+						<li>{t("newAccount.step3")}</li>
+						<li>{t("newAccount.step4")}</li>
+						<li>{t("newAccount.step5")}</li>
+						<li>{t("newAccount.step6")}</li>
+						<li>{t("newAccount.step7")}</li>
+						<li>{t("newAccount.step8")}</li>
+						<li>{t("newAccount.step9")}</li>
 					</ol>
 				</div>
-				<div className="">
-					<h5>المشاكل الشائعة</h5>
-					<p>التطبيق يعرض رسالة "الرجاء إدخال بريد إلكتروني صالح".</p>
+
+				<div className="" style={{ textAlign: isLTR ? "left" : "right" }}>
+					<h5>{t("newAccount.commonIssues")}</h5>
+					<p>{t("newAccount.errorMessage")}</p>
 					<ul className="mx-3" style={{ listStyleType: "square" }}>
-						<li>يحدث ذلك عند إدخال بريد غير صالح.</li>
-						<li>السبب الأكثر شيوعًا هو وجود مسافات في البداية أو النهاية.</li>
-						<li>
-							تأكّد من عدم وجود مسافات وأن البريد يتبع الصيغة الصحيحة للبريد
-							الإلكتروني.
-						</li>
+						<li>{t("newAccount.issue1")}</li>
+						<li>{t("newAccount.issue2")}</li>
+						<li>{t("newAccount.issue3")}</li>
 					</ul>
-					<span>لم أتلقَّ رمز التحقق.</span>
+					<span>{t("newAccount.noCode")}</span>
 				</div>
+
 				<div className="d-flex flex-column align-items-center justify-content-center mt-5 mb-5 px-3">
 					<h5
 						style={{
@@ -78,7 +88,7 @@ export default function NewAccount() {
 							marginBottom: "clamp(15px, 4vw, 25px)",
 						}}
 					>
-						هل وجدت الإجابة التي تبحث عنها؟
+						{t("newAccount.foundAnswer")}
 					</h5>
 
 					<div className="d-flex flex-wrap justify-content-center gap-3 mb-3">
@@ -109,7 +119,7 @@ export default function NewAccount() {
 									"0 2px 8px rgba(0, 0, 0, 0.1)";
 							}}
 						>
-							بالتأكيد
+							{t("newAccount.yes")}
 						</button>
 
 						<button
@@ -138,7 +148,7 @@ export default function NewAccount() {
 									"0 2px 8px rgba(0, 0, 0, 0.1)";
 							}}
 						>
-							ليس مفيداً
+							{t("newAccount.notHelpful")}
 						</button>
 					</div>
 
@@ -152,7 +162,7 @@ export default function NewAccount() {
 							marginBottom: "clamp(15px, 4vw, 20px)",
 						}}
 					>
-						1239 من 1844 وجدوا هذا مفيداً
+						{t("newAccount.feedbackCount")}
 					</p>
 
 					<span
@@ -166,18 +176,21 @@ export default function NewAccount() {
 					></span>
 				</div>
 
-				{/* Buttons */}
-				<h4 className="mb-4">مقالات هذا القسم</h4>
-				<div className="row gx-2 gy-3" style={{}}>
+				{/* Articles Section */}
+				<h4 className="mb-4" style={{ textAlign: isLTR ? "left" : "right" }}>
+					{t("newAccount.articles")}
+				</h4>
+				<div className="row gx-2 gy-3">
 					{Array.from({ length: 8 }).map((_, index) => (
-						<div key={index} className="col-12 col-md-6 d-flex ">
+						<div key={index} className="col-12 col-md-6 d-flex">
 							<div
 								className="d-flex align-items-center px-4 shadow-sm"
 								style={{
-									width: "509px",
+									width: "100%",
 									height: "60px",
 									background: "#EDEDED",
 									borderRadius: "28px",
+									flexDirection: isLTR ? "row" : "row-reverse",
 								}}
 							>
 								{/* Red Dot */}
@@ -186,21 +199,22 @@ export default function NewAccount() {
 									style={{
 										width: "12px",
 										height: "12px",
-										// marginLeft: '6px'
-										marginLeft: "0px",
+										marginLeft: isLTR ? "0" : "10px",
+										marginRight: isLTR ? "10px" : "0",
 									}}
 								></div>
 
 								{/* Text */}
 								<span
-									className="fw-semibold fs-5 flex-grow-1 text-end px-3"
+									className="fw-semibold fs-5 flex-grow-1 px-3"
 									style={{
 										fontFamily: "'Cairo', sans-serif",
-										fontSize: "25px",
+										fontSize: "clamp(16px, 4vw, 25px)",
 										color: "#000000",
+										textAlign: isLTR ? "left" : "right",
 									}}
 								>
-									إدارة حسابك
+									{t("newAccount.articleTitle")}
 								</span>
 							</div>
 						</div>

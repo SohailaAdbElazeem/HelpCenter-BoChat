@@ -5,12 +5,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	direction: rtl;
+	/* direction: rtl; */
 }
-.title,
-.text-join {
-	direction: rtl;
-}
+
 .title {
 	width: 709;
 	height: 115;
@@ -18,7 +15,7 @@
 	font-weight: 700;
 	font-size: 65px;
 	line-height: 45px;
-	text-align: right;
+	/* text-align: right; */
 	margin: 0 160px;
 }
 .text-join {
@@ -26,7 +23,7 @@
 	font-weight: 600;
 	font-size: 24px;
 	line-height: 130%;
-	text-align: right;
+	/* text-align: right; */
 	color: #000000;
 	padding: 40px 170px;
 	margin-bottom: 30px;
@@ -58,8 +55,8 @@
 .box .card {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-	text-align: right;
+	/* align-items: flex-start; */
+	/* text-align: right; */
 	padding: 0 15px;
 	background: transparent;
 	border: none;
@@ -153,7 +150,9 @@
 	.card h3 {
 		font-size: 15px;
 	}
-
+	.boxes-section.ltr .box-title {
+		font-size: 10px;
+	}
 	.card p {
 		font-size: 12px;
 	}

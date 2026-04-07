@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function FormPage() {
+	const { t, i18n } = useTranslation();
 	const [showToast, setShowToast] = useState(false);
+	const isLTR = i18n.language === "en";
 
 	const handleSubmit = () => {
 		setShowToast(true);
@@ -18,6 +21,7 @@ export default function FormPage() {
 					"linear-gradient(180deg, #D72229 30%, rgba(215, 34, 41, 0) 100%)",
 				paddingBottom: "clamp(60px, 15vh, 120px)",
 				marginBottom: "clamp(50px, 15vw, 200px)",
+				direction: isLTR ? "ltr" : "rtl",
 			}}
 		>
 			<div
@@ -37,7 +41,7 @@ export default function FormPage() {
 							textAlign: "center",
 						}}
 					>
-						إرسال طلب
+						{t("formPage.title")}
 					</h2>
 				</div>
 				<form className="mx-auto" style={{ maxWidth: "min(1033px, 100%)" }}>
@@ -48,15 +52,14 @@ export default function FormPage() {
 							style={{
 								fontFamily: "'Cairo', sans-serif",
 								fontWeight: 600,
-								// fontSize: "22px",
 								fontSize: "clamp(16px, 4vw, 22px)",
 								color: "#000000",
 								display: "block",
-								textAlign: "right",
+								textAlign: isLTR ? "left" : "right",
 								marginBottom: "12px",
 							}}
 						>
-							عنوان بريدك الالكتروني
+							{t("formPage.email")}
 						</label>
 						<input
 							type="email"
@@ -72,7 +75,7 @@ export default function FormPage() {
 								border: "none",
 								padding: "0 clamp(15px, 4vw, 25px)",
 								fontSize: "clamp(14px, 3.5vw, 18px)",
-								textAlign: "right",
+								textAlign: isLTR ? "left" : "right",
 							}}
 						/>
 					</div>
@@ -87,11 +90,11 @@ export default function FormPage() {
 								fontSize: "clamp(16px, 4vw, 22px)",
 								color: "#000000",
 								display: "block",
-								textAlign: "right",
+								textAlign: isLTR ? "left" : "right",
 								marginBottom: "12px",
 							}}
 						>
-							العنوان
+							{t("formPage.address")}
 						</label>
 						<input
 							type="text"
@@ -107,7 +110,7 @@ export default function FormPage() {
 								border: "none",
 								padding: "0 clamp(15px, 4vw, 25px)",
 								fontSize: "clamp(14px, 3.5vw, 18px)",
-								textAlign: "right",
+								textAlign: isLTR ? "left" : "right",
 							}}
 						/>
 					</div>
@@ -122,22 +125,21 @@ export default function FormPage() {
 								fontSize: "clamp(16px, 4vw, 22px)",
 								color: "#000000",
 								display: "block",
-								textAlign: "right",
+								textAlign: isLTR ? "left" : "right",
 							}}
 						>
-							الوصف
+							{t("formPage.description")}
 						</label>
 						<p
 							style={{
 								fontFamily: "'Cairo', sans-serif",
 								fontSize: "clamp(13px, 3.5vw, 17px)",
 								color: "#333",
-								textAlign: "right",
+								textAlign: isLTR ? "left" : "right",
 								marginBottom: "clamp(20px, 5vw, 30px)",
 							}}
 						>
-							يُرجى إدخال بيانات طلبك. سوف يستجيب عضو من فريق الدعم في أسرع وقت
-							ممكن
+							{t("formPage.descriptionHint")}
 						</p>
 						<textarea
 							id="desc"
@@ -153,7 +155,7 @@ export default function FormPage() {
 								border: "none",
 								padding: "clamp(15px, 3vw, 25px)",
 								fontSize: "clamp(14px, 3.5vw, 18px)",
-								textAlign: "right",
+								textAlign: isLTR ? "left" : "right",
 								resize: "vertical",
 							}}
 						/>
@@ -169,11 +171,11 @@ export default function FormPage() {
 								fontSize: "clamp(16px, 4vw, 22px)",
 								color: "#000000",
 								display: "block",
-								textAlign: "right",
+								textAlign: isLTR ? "left" : "right",
 								marginBottom: "12px",
 							}}
 						>
-							مرفقات
+							{t("formPage.attachments")}
 						</label>
 
 						<label
@@ -195,7 +197,7 @@ export default function FormPage() {
 								padding: "clamp(10px, 3vw, 20px)",
 							}}
 						>
-							اختر ملفاً او قم بالسحب والاسقاط هنا
+							{t("formPage.uploadHint")}
 						</label>
 
 						<input
@@ -228,7 +230,7 @@ export default function FormPage() {
 							}}
 							onClick={handleSubmit}
 						>
-							إرسال طلب
+							{t("formPage.submit")}
 						</button>
 					</div>
 				</form>
@@ -239,8 +241,8 @@ export default function FormPage() {
 						style={{
 							position: "fixed",
 							top: "clamp(10px, 5vh, 50px)",
-							right: "clamp(10px, 5vw, 30px)",
-							left: "clamp(10px, 5vw, auto)",
+							right: isLTR ? "auto" : "clamp(10px, 5vw, 30px)",
+							left: isLTR ? "clamp(10px, 5vw, 30px)" : "auto",
 							zIndex: 9999,
 						}}
 					>
@@ -258,7 +260,7 @@ export default function FormPage() {
 								fontSize: "clamp(12px, 3.5vw, 16px)",
 								fontWeight: 500,
 								color: "#D72229",
-								direction: "rtl",
+								direction: isLTR ? "ltr" : "rtl",
 								gap: "10px",
 							}}
 						>
@@ -282,21 +284,19 @@ export default function FormPage() {
 									boxSizing: "border-box",
 									flexShrink: 0,
 								}}
-								// /        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#b81c22'}
-								// onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#D72229'}
 							>
 								×
 							</button>
 
-							{/*  */}
 							<div
 								style={{
 									flex: 1,
-									textAlign: "right",
-									paddingRight: "8px",
+									textAlign: isLTR ? "left" : "right",
+									paddingRight: isLTR ? "0" : "8px",
+									paddingLeft: isLTR ? "8px" : "0",
 								}}
 							>
-								تم استلام طلبك بنجاح
+								{t("formPage.successMessage")}
 							</div>
 						</div>
 					</div>
