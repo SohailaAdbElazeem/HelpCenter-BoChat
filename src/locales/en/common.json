@@ -1,0 +1,277 @@
+{
+    "header": {
+  "help": "HelpCenter"
+},
+  "home": {
+    "title": "Our community is always at the heart of our attention",
+    "join": "Join us as a partner",
+
+    "problem": {
+      "title": "Having trouble logging in?",
+      "desc": "Don't worry, Bo Chat team is here to get you back quickly",
+      "btn": "Open a support ticket"
+    },
+
+    "boxes": {
+      "security": {
+        "header": "Privacy & Security",
+        "text": "How we protect your data and keep your community safe"
+      },
+      "quickstart": {
+        "header": "Quick Start",
+        "text": "Everything you need to set up your account and start communicating"
+      },
+      "features": {
+        "header": "Smart Features",
+        "text": "Discover how our tools make your communication smarter and more enjoyable"
+      },
+      "personalize": {
+        "header": "Personalization",
+        "text": "Make Bo Chat yours – control colors, fonts, and dark mode"
+      },
+      "settings": {
+        "header": "Account & Settings",
+        "text": "Full control over your app appearance, notifications, and personal info"
+      },
+      "subscriptions": {
+        "header": "Payments & Subscriptions",
+        "text": "Everything you need to know about Bo Chat premium features and supporting our growth"
+      }
+    },
+
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "more": "View More",
+      "questions": [
+        {
+          "q": "If I lose my phone, how can I recover my account without compromising my old data?",
+          "a": "Our vision is built on making communication a right, not a product. We use efficient open-source infrastructure to reduce costs and prioritize community trust."
+        },
+        {
+          "q": "How can I customize the app interface to match my style?",
+          "a": "Absolutely. Bo Chat is designed to stay free. No fees, no subscriptions, no hidden surprises."
+        },
+        {
+          "q": "Does the app consume a lot of storage or affect battery performance?",
+          "a": "Yes, with top standards. We use end-to-end encryption so only you and the recipient can read messages."
+        },
+        {
+          "q": "How can I invite my friends to join?",
+          "a": "Yes, with top standards. We use end-to-end encryption so only you and the recipient can read messages."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "contact": "Contact Us",
+      "info": "Information",
+      "help": "Help"
+    },
+    "findUs": {
+      "title": "Find Us",
+      "ios": "iOS App Store",
+      "android": "Google Play Android",
+      "xiaomi": "Xiaomi App Store"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "guidelines": "Community Guidelines",
+      "copyright": "Copyright Policy",
+      "privacyCenter": "Privacy Center"
+    },
+    "social": {
+      "title": "Community"
+    },
+    "bottom": "All rights reserved © Panda Oracle IT Company 2025"
+  },
+  "search": {
+    "placeholder": "Type what you want to search for"
+  },
+ "accountSettings": {
+    "title": "Account Settings",
+    "items": [
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account",
+      "Manage Your Account"
+    ]
+  },
+    "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": [
+      "If I lose my phone, how can I recover my account without compromising my old data privacy?",
+      "How can I customize the app interface to suit my personal taste?",
+      "Does the app consume a lot of storage space or affect battery performance?",
+      "How can I invite my friends to join and try the new class with you?",
+      "What are the steps to update my personal information within the app?",
+      "Can I change notification preferences at any time?",
+      "How can I manage apps connected to my account?",
+      "What security measures are available to protect my account?"
+    ]
+  },
+  "formPage": {
+    "title": "Submit Request",
+    "email": "Your Email Address",
+    "address": "Address",
+    "description": "Description",
+    "descriptionHint": "Please enter your request details. A support team member will respond as soon as possible.",
+    "attachments": "Attachments",
+    "uploadHint": "Choose a file or drag and drop here",
+    "submit": "Submit Request",
+    "successMessage": "Your request has been received successfully"
+  },
+  "joinUs": {
+    "title": "Join Us as a Partner",
+    "description": "Be part of the BooChat journey. Whether you're a loyal user wanting to spread our message or an investor who believes in our vision of privacy protection, we open doors for you to build the future together.",
+    "ambassadorProgram": "Ambassador Program",
+    "ambassadorText": "You can invite your friends or followers using referral codes",
+    "investWithUs": "Invest With Us",
+    "investText": "We target people who have an investment mindset and want to support BooChat",
+    "developers": "Developers & Contributors",
+    "developersText": "Inviting developers to report security vulnerabilities or suggest new software features"
+  },
+  "newAccount": {
+    "title": "Create New Account",
+    "lastUpdated": "Last updated:",
+    "april2025": "April 2025",
+    "updated": "Updated",
+    "steps": "Steps:",
+    "step1": "Open the app.",
+    "step2": "Tap on Create Account.",
+    "step3": "Enter your full name, email address, and date of birth.",
+    "step4": "Tap Next.",
+    "step5": "Create a strong password.",
+    "step6": "Confirm your email (important for the next step).",
+    "step7": "You will receive a verification email — enter the code and tap Verify.",
+    "step8": "Choose your @username.",
+    "step9": "Tap Register.",
+    "commonIssues": "Common Issues",
+    "errorMessage": "The app shows the message 'Please enter a valid email address'.",
+    "issue1": "This happens when entering an invalid email.",
+    "issue2": "The most common cause is spaces at the beginning or end.",
+    "issue3": "Make sure there are no spaces and the email follows the correct email format.",
+    "noCode": "I didn't receive the verification code.",
+    "foundAnswer": "Did you find the answer you were looking for?",
+    "yes": "Yes",
+    "notHelpful": "Not helpful",
+    "feedbackCount": "1239 out of 1844 found this helpful",
+    "articles": "Articles in this section",
+    "articleTitle": "Manage your account"
+  },
+  
+  "personalizeExp": {
+    "title": "Personalize Experience",
+    "manageAccount": "Manage your account",
+    "privacySettings": "Privacy Settings",
+    "notificationPrefs": "Notification Preferences",
+    "languageSettings": "Language Settings",
+    "themeCustomization": "Theme Customization",
+    "dataManagement": "Data Management",
+    "securitySettings": "Security Settings",
+    "connectedDevices": "Connected Devices",
+    "twoFactorAuth": "Two-Factor Authentication",
+    "sessionManagement": "Session Management",
+    "backupSettings": "Backup Settings",
+    "storageManagement": "Storage Management",
+    "accessibility": "Accessibility",
+    "familySharing": "Family Sharing",
+    "paymentMethods": "Payment Methods",
+    "subscriptionPlan": "Subscription Plan"
+  },
+  
+  "quickstart": {
+    "title": "Quick Start",
+    "gettingStarted": "Getting Started",
+    "accountSetup": "Account Setup",
+    "navigation": "Account Setup",
+    "features": "Account Setup",
+    "settings": "Account Setup",
+    "profileSetup": "Account Setup",
+    "messaging":"Account Setup",
+    "notifications": "Account Setup",
+    "privacyBasics": "Account Setup",
+    "securityTips": "Account Setup",
+    "dataSync": "Account Setup",
+    "backupRestore": "Account Setup",
+    "troubleshooting":"Account Setup",
+    "faq":"Account Setup",
+    "support":"Account Setup" ,
+    "feedback":"Account Setup" 
+  },
+  "smartFeatures": {
+    "title": "Smart Features",
+    "aiAssistant": "AI Assistant",
+    "smartReplies": "Smart Replies",
+    "voiceCommands": "Voice Commands",
+    "autoTranslate": "Auto Translate",
+    "smartSearch": "Smart Search",
+    "predictiveText": "Predictive Text",
+    "faceRecognition": "Face Recognition",
+    "smartNotifications": "Smart Notifications",
+    "autoOrganize": "Auto Organize",
+    "smartFilters": "Smart Filters",
+    "voiceToText": "Voice to Text",
+    "smartSuggestions": "Smart Suggestions",
+    "autoBackup": "Auto Backup",
+    "smartSorting": "Smart Sorting",
+    "intentDetection": "Intent Detection",
+    "contextAware": "Context Aware"
+  },
+  "security": {
+    "title": "Privacy & Security",
+    "dataEncryption": "Data Encryption",
+    "twoFactorAuth": "Two-Factor Authentication",
+    "privacySettings": "Privacy Settings",
+    "dataBackup": "Data Backup",
+    "secureLogin": "Secure Login",
+    "accountRecovery": "Account Recovery",
+    "sessionManagement": "Session Management",
+    "deviceManagement": "Device Management",
+    "dataDeletion": "Data Deletion",
+    "securityAlerts": "Security Alerts",
+    "biometricAuth": "Biometric Authentication",
+    "secureSharing": "Secure Sharing",
+    "privateMode": "Private Mode",
+    "dataPermissions": "Data Permissions",
+    "securityAudit": "Security Audit",
+    "vpnProtection": "VPN Protection"
+  },
+  "subscriptions": {
+    "title": "Payments & Subscriptions",
+    "subscriptionPlans": "Subscription Plans",
+    "paymentMethods": "Payment Methods",
+    "billingHistory": "Billing History",
+    "autoRenewal": "Auto-Renewal Settings",
+    "cancelSubscription": "Cancel Subscription",
+    "changePlan": "Change Plan",
+    "paymentFailed": "Payment Failed",
+    "refundPolicy": "Refund Policy",
+    "invoiceDownload": "Download Invoice",
+    "taxInformation": "Tax Information",
+    "promoCodes": "Promo Codes",
+    "discountOffers": "Discount Offers",
+    "paymentSecurity": "Payment Security",
+    "currencySettings": "Currency Settings",
+    "subscriptionBenefits": "Subscription Benefits",
+    "customerSupport": "Customer Support"
+  }
+
+ 
+
+}
