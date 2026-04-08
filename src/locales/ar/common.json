@@ -60,6 +60,16 @@
           "a": "نعم، وبأعلى المعايير نستخدم بروتوكولات تشفير (End-to-End) تضمن أنك والطرف الآخر فقط من يمكنكم قراءة الرسائل حتى نحن في بو شات لا نملك المفتاح للاطلاع عليها."
         }
       ]
+    },
+    "search": {
+      "resultsFor": "نتائج البحث عن",
+      "box": "صندوق",
+      "boxes": "صناديق",
+      "faqs": "أسئلة شائعة",
+      "and": "و",
+      "noResults": "لا توجد نتائج مطابقة لبحثك",
+      "noFaqResults": "لا توجد أسئلة شائعة مطابقة لبحثك",
+      "clearSearch": "مسح البحث"
     }
   },
   "footer": {
@@ -111,10 +121,17 @@
       "إدارة حسابك",
       "إدارة حسابك"
     
-    ]
+    ],
+      "searchResults": "نتائج البحث عن",
+    "result": "نتيجة",
+    "results": "نتائج",
+    "noResults": "لا توجد إعدادات مطابقة لبحثك"
   },
    "faq": {
     "title": "الأسئلة الشائعة",
+     "question": "سؤال",
+     "searchResults": "نتائج البحث عن",
+    "noResults": "لا توجد أسئلة شائعة مطابقة لبحثك عن \"{{searchTerm}}\"",
     "questions": [
       "في حال فقدت هاتفي كيف يمكنني استعادة حسابي دون المساس بخصوصية بياناتي القديمة؟",
       "كيف يمكنني تخصيص واجهة التطبيق لتناسب ذوقي الشخصي؟",
@@ -126,17 +143,7 @@
       "ما هي إجراءات الأمان المتاحة لحماية حسابي؟"
     ]
   },
-  "formPage": {
-    "title": "إرسال طلب",
-    "email": "عنوان بريدك الالكتروني",
-    "address": "العنوان",
-    "description": "الوصف",
-    "descriptionHint": "يُرجى إدخال بيانات طلبك. سوف يستجيب عضو من فريق الدعم في أسرع وقت ممكن",
-    "attachments": "مرفقات",
-    "uploadHint": "اختر ملفاً او قم بالسحب والاسقاط هنا",
-    "submit": "إرسال طلب",
-    "successMessage": "تم استلام طلبك بنجاح"
-  },
+ 
   "joinUs": {
     "title": "انضم إلينا كشريك",
     "description": "كن جزءاً من رحلة بوشات سواء كنت مستخدماً وفياً يرغب في نشر رسالتنا أو مستثمراً يؤمن برؤيتنا في حماية الخصوصية نحن نفتح لك الأبواب لنبني المستقبل سوياً.",
@@ -173,7 +180,10 @@
     "notHelpful": "ليس مفيداً",
     "feedbackCount": "١٢٣٩ من ١٨٤٤ وجدوا هذا مفيداً",
     "articles": "مقالات هذا القسم",
-    "articleTitle": "إدارة حسابك"
+    "articleTitle": "إدارة حسابك",
+     "searchResults": "نتائج البحث عن",
+    "resultsFound": "تم العثور على محتوى مطابق",
+    "noResultsFound": "لم يتم العثور على محتوى مطابق"
   },
   "personalizeExp": {
     "title": "تخصيص التجربة",
@@ -192,29 +202,37 @@
     "accessibility": "سهولة الوصول",
     "familySharing": "المشاركة العائلية",
     "paymentMethods": "طرق الدفع",
-    "subscriptionPlan": "خطة الاشتراك"
+    "subscriptionPlan": "خطة الاشتراك",
+    "searchResults": "نتائج البحث عن",
+    "result": "خيار",
+    "results": "خيارات",
+    "noResults": "لا توجد خيارات مطابقة لبحثك عن \"{{searchTerm}}\""
   },
   
+
   "quickstart": {
     "title": "البداية السريعة",
     "gettingStarted": "بدء الاستخدام",
     "accountSetup": "إعداد الحساب",
-    "navigation": "إعداد الحساب",
-    "features": "إعداد الحساب",
-    "settings": "إعداد الحساب",
-    "profileSetup": "إعداد الحساب",
-    "messaging":"إعداد الحساب",
-    "notifications": "إعداد الحساب",
-    "privacyBasics": "إعداد الحساب",
-    "securityTips": "إعداد الحساب",
-    "dataSync":"إعداد الحساب",
-    "backupRestore": "إعداد الحساب",
-    "troubleshooting": "إعداد الحساب",
-    "faq": "إعداد الحساب",
-    "support": "إعداد الحساب",
-    "feedback": "إعداد الحساب"
+    "navigation": "التنقل في التطبيق",
+    "features": "الميزات الرئيسية",
+    "settings": "الإعدادات",
+    "profileSetup": "إعداد الملف الشخصي",
+    "messaging": "الرسائل",
+    "notifications": "الإشعارات",
+    "privacyBasics": "أساسيات الخصوصية",
+    "securityTips": "نصائح الأمان",
+    "dataSync": "مزامنة البيانات",
+    "backupRestore": "النسخ الاحتياطي والاستعادة",
+    "troubleshooting": "حل المشكلات",
+    "faq": "الأسئلة الشائعة",
+    "support": "الدعم",
+    "feedback": "إرسال ملاحظات",
+    "searchResults": "نتائج البحث عن",
+    "result": "دليل",
+    "results": "أدلة",
+    "noResults": "لا توجد أدلة مطابقة لبحثك عن \"{{searchTerm}}\""
   },
-  
   "smartFeatures": {
     "title": "المميزات الذكية",
     "aiAssistant": "المساعد الذكي",
@@ -232,7 +250,11 @@
     "autoBackup": "النسخ الاحتياطي التلقائي",
     "smartSorting": "الفرز الذكي",
     "intentDetection": "كشف النية",
-    "contextAware": "الوعي بالسياق"
+    "contextAware": "الوعي بالسياق",
+    "searchResults": "نتائج البحث عن",
+    "result": "ميزة",
+    "results": "ميزات",
+    "noResults": "لا توجد ميزات ذكية مطابقة لبحثك عن \"{{searchTerm}}\""
   },
   "security": {
     "title": "الخصوصية والأمان",
@@ -251,7 +273,11 @@
     "privateMode": "الوضع الخاص",
     "dataPermissions": "أذونات البيانات",
     "securityAudit": "تدقيق الأمان",
-    "vpnProtection": "حماية VPN"
+    "vpnProtection": "حماية VPN",
+     "searchResults": "Search results for",
+    "result": "security option",
+    "results": "security options",
+    "noResults": "No security options match your search for \"{{searchTerm}}\""
   },
   "subscriptions": {
     "title": "الدفع والاشتراكات",
@@ -270,7 +296,100 @@
     "paymentSecurity": "أمان الدفع",
     "currencySettings": "إعدادات العملة",
     "subscriptionBenefits": "مزايا الاشتراك",
-    "customerSupport": "دعم العملاء"
+    "customerSupport": "دعم العملاء",
+     "searchResults": "نتائج البحث عن",
+    "result": "خيار",
+    "results": "خيارات",
+    "noResults": "لا توجد خيارات اشتراك مطابقة لبحثك عن \"{{searchTerm}}\""
+  },
+  "Ambassadors": {
+    "title": " برنامج السفراء",
+    "gettingStarted": "بدء الاستخدام",
+    "accountSetup": "إعداد الحساب",
+    "navigation": "إعداد الحساب",
+    "features": "إعداد الحساب",
+    "settings": "إعداد الحساب",
+    "profileSetup": "إعداد الحساب",
+    "messaging":"إعداد الحساب",
+    "notifications": "إعداد الحساب",
+    "privacyBasics": "إعداد الحساب",
+    "securityTips": "إعداد الحساب",
+    "dataSync":"إعداد الحساب",
+    "backupRestore": "إعداد الحساب",
+    "troubleshooting": "إعداد الحساب",
+    "faq": "إعداد الحساب",
+    "support": "إعداد الحساب",
+    "feedback": "إعداد الحساب"
+  },
+   "ambassadors": {
+    "searchResults": "نتائج البحث عن",
+    "result": "سفير",
+    "results": "سفراء",
+    "noResults": "لا توجد نتائج مطابقة لبحثك عن \"{{searchTerm}}\""
+  },
+  "Invest": {
+    "title": "فرص الاستثمار",
+    "option1": "الاستثمار في التكنولوجيا",
+    "option2": "الاستثمار العقاري",
+    "option3": "الأسهم والسندات",
+    "option4": "الاستثمار في الشركات الناشئة",
+    "option5": "الذهب والمعادن الثمينة",
+    "option6": "العملات الرقمية",
+    "option7": "صناديق الاستثمار",
+    "option8": "الاستثمار الزراعي"
+  },
+  "invest": {
+    "searchResults": "نتائج البحث عن",
+    "result": "فرصة استثمار",
+    "results": "فرص استثمارية",
+    "noResults": "لا توجد فرص استثمارية مطابقة لبحثك عن \"{{searchTerm}}\""
+  },
+ "Developers": {
+    "title": "   المطورون والمساهمون",
+    "gettingStarted": "بدء الاستخدام",
+    "accountSetup": "إعداد الحساب",
+    "navigation": "إعداد الحساب",
+    "features": "إعداد الحساب",
+    "settings": "إعداد الحساب",
+    "profileSetup": "إعداد الحساب",
+    "messaging":"إعداد الحساب",
+    "notifications": "إعداد الحساب",
+    "privacyBasics": "إعداد الحساب",
+    "securityTips": "إعداد الحساب",
+    "dataSync":"إعداد الحساب",
+    "backupRestore": "إعداد الحساب",
+    "troubleshooting": "إعداد الحساب",
+    "faq": "إعداد الحساب",
+    "support": "إعداد الحساب",
+    "feedback": "إعداد الحساب"
+  },
+  "developers": {
+    "searchResults": "نتائج البحث عن",
+    "result": "مطور",
+    "results": "مطورين",
+    "noResults": "لا توجد نتائج مطابقة لبحثك عن \"{{searchTerm}}\""
+  },
+  "formPage": {
+    "title": " إرسال طلب",
+    "email": "البريد الإلكتروني",
+    "address": "العنوان",
+    "description": "الوصف",
+    "descriptionHint": " يُرجى إدخال بيانات طلبك. سوف يستجيب عضو من فريق الدعم في أسرع وقت ممكن",
+    "attachments": "المرفقات",
+    "uploadHint": "اضغط للرفع أو اسحب الملفات هنا",
+    "submit": "إرسال",
+    "successMessage": "✓ تم الإرسال بنجاح!",
+    "errors": {
+      "missingFields": "يوجد {{count}} حقل ناقص. الرجاء تعبئة جميع الحقول المطلوبة.",
+      "missingFields_plural": "يوجد {{count}} حقول ناقصة. الرجاء تعبئة جميع الحقول المطلوبة.",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "البريد الإلكتروني غير صحيح",
+      "addressRequired": "العنوان مطلوب",
+      "addressTooShort": "العنوان قصير جداً (3 أحرف على الأقل)",
+      "descriptionRequired": "الوصف مطلوب",
+      "descriptionTooShort": "الوصف قصير جداً (10 أحرف على الأقل)",
+      "fileRequired": "الملف مطلوب"
+    }
   }
 
 }

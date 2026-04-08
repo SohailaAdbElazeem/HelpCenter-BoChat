@@ -1,47 +1,32 @@
 import React, { useMemo } from "react";
-import { useTranslation } from "react-i18next";
 import Search from "../Search/Search";
+import { useTranslation } from "react-i18next";
 import { useSearch } from "../../Context/SearchContext";
 
-const SpecialtiesAndSecurity = () => {
+const Invest = () => {
 	const { t, i18n } = useTranslation();
 	const { searchTerm } = useSearch();
 	const isLTR = i18n.language === "en";
 
-	const articles = [
-		"dataEncryption",
-		"twoFactorAuth",
-		"privacySettings",
-		"dataBackup",
-		"secureLogin",
-		"accountRecovery",
-		"sessionManagement",
-		"deviceManagement",
-		"dataDeletion",
-		"securityAlerts",
-		"biometricAuth",
-		"secureSharing",
-		"privateMode",
-		"dataPermissions",
-		"securityAudit",
-		"vpnProtection",
-	];
+	const InvestObject = t("Invest", { returnObjects: true });
 
-	const articlesWithTranslations = useMemo(() => {
-		return articles.map((articleKey) => ({
-			key: articleKey,
-			title: t(`security.${articleKey}`),
-		}));
-	}, [t]);
+	const investArray = useMemo(() => {
+		return Object.keys(InvestObject)
+			.filter((key) => key !== "title")
+			.map((key) => ({
+				key: key,
+				name: InvestObject[key],
+			}));
+	}, [InvestObject]);
 
-	const filteredArticles = useMemo(() => {
-		if (!searchTerm.trim()) return articlesWithTranslations;
+	const filteredInvest = useMemo(() => {
+		if (!searchTerm.trim()) return investArray;
 
 		const searchLower = searchTerm.toLowerCase().trim();
-		return articlesWithTranslations.filter((article) =>
-			article.title.toLowerCase().includes(searchLower),
+		return investArray.filter((item) =>
+			item.name.toLowerCase().includes(searchLower),
 		);
-	}, [searchTerm, articlesWithTranslations]);
+	}, [searchTerm, investArray]);
 
 	const highlightText = (text, searchTerm) => {
 		if (!searchTerm || !searchTerm.trim()) return text;
@@ -83,28 +68,27 @@ const SpecialtiesAndSecurity = () => {
 			style={{
 				background:
 					"linear-gradient(180deg, #D72229 30%, rgba(215, 34, 41, 0) 100%)",
-				direction: isLTR ? "ltr" : "rtl",
 			}}
 		>
-			<div className="w-100" style={{ maxWidth: "1050px", margin: "0 auto" }}>
-				{/* Search */}
+			<div className="w-100" style={{ maxWidth: "1100px", margin: "0 auto" }}>
+				{/* Search Component */}
 				<Search />
 
-				{/* Header */}
-				<div className="mb-5 Head-title">
+				{/* Title */}
+				<div className="mb-5">
 					<div
 						className="fw-bold"
 						style={{
 							fontFamily: "'Cairo', sans-serif",
 							fontWeight: 700,
+							color: "#000000",
 							fontSize: "clamp(30px, 8vw, 65px)",
 							lineHeight: "clamp(35px, 6vw, 55px)",
-							color: "#000000",
 							margin: "clamp(20px, 10vw, 90px) 0 clamp(20px, 8vw, 60px) 0",
 							textAlign: isLTR ? "left" : "right",
 						}}
 					>
-						{highlightText(t("security.title"), searchTerm)}
+						{InvestObject.title}
 					</div>
 				</div>
 
@@ -112,61 +96,59 @@ const SpecialtiesAndSecurity = () => {
 				{searchTerm && (
 					<div
 						className="search-results-info"
-						style={
-							{
-								// textAlign: isLTR ? "left" : "right",
-								// marginBottom: "20px",
-								// padding: "12px 20px",
-								// background: "rgba(255, 255, 255, 0.95)",
-								// borderRadius: "12px",
-								// color: "#D72229",
-								// fontWeight: 500,
-								// maxWidth: "600px",
-								// margin: "0 auto 20px auto",
-								// animation: "fadeIn 0.3s ease-in-out",
-							}
-						}
+						// style={{
+						//   textAlign: isLTR ? "left" : "right",
+						//   marginBottom: "20px",
+						//   padding: "12px 20px",
+						//   background: "rgba(255, 255, 255, 0.95)",
+						//   borderRadius: "12px",
+						//   color: "#D72229",
+						//   fontWeight: 500,
+						//   maxWidth: "600px",
+						//   margin: "0 auto 20px auto",
+						//   animation: "fadeIn 0.3s ease-in-out",
+						// }}
 					>
-						{/* 🔍 {t("security.searchResults")} "{searchTerm}": 
-						<strong> {filteredArticles.length} </strong> 
-						{filteredArticles.length === 1 ? t("security.result") : t("security.results")} */}
+						{/* 🔍 {t("invest.searchResults")} "{searchTerm}": 
+            <strong> {filteredInvest.length} </strong> 
+            {filteredInvest.length === 1 ? t("invest.result") : t("invest.results")} */}
 					</div>
 				)}
 
-				{/* Buttons Grid */}
-				{filteredArticles.length > 0 ? (
+				{/* Items */}
+				{filteredInvest.length > 0 ? (
 					<div
 						className="row gx-2 gy-3"
 						style={{ marginBottom: "clamp(30px, 15vw, 500px)" }}
 					>
-						{filteredArticles.map((article, index) => (
-							<div key={article.key} className="col-12 col-md-6 d-flex">
+						{filteredInvest.map((item, index) => (
+							<div
+								key={item.key || index}
+								className="col-12 col-md-6 d-flex justify-content-center"
+							>
 								<div
-									className="d-flex align-items-center px-4 shadow-sm"
+									className="d-flex align-items-center px-4 shadow-sm invest-item"
 									style={{
 										width: "100%",
+										maxWidth: "509px",
 										height: "60px",
 										background: "#EDEDED",
 										borderRadius: "28px",
 										opacity: 1,
-										flexDirection: isLTR ? "row" : "row-reverse",
-										cursor: "pointer",
+										flexDirection: isLTR ? "row-reverse" : "row",
 										transition: "all 0.3s ease",
-										animation: "fadeIn 0.3s ease-in-out",
+										cursor: "pointer",
+									}}
+									onClick={() => {
+										console.log("Selected investment:", item.name);
 									}}
 									onMouseEnter={(e) => {
-										e.currentTarget.style.transform = "translateY(-2px)";
-										e.currentTarget.style.boxShadow =
-											"0 4px 12px rgba(0, 0, 0, 0.15)";
+										e.currentTarget.style.transform = "translateX(5px)";
 										e.currentTarget.style.background = "#e0e0e0";
 									}}
 									onMouseLeave={(e) => {
-										e.currentTarget.style.transform = "translateY(0)";
-										e.currentTarget.style.boxShadow = "none";
+										e.currentTarget.style.transform = "translateX(0)";
 										e.currentTarget.style.background = "#EDEDED";
-									}}
-									onClick={() => {
-										console.log("Security article clicked:", article.title);
 									}}
 								>
 									{/* Red Dot */}
@@ -175,9 +157,8 @@ const SpecialtiesAndSecurity = () => {
 										style={{
 											width: "12px",
 											height: "12px",
-											marginLeft: isLTR ? "0" : "auto",
 											marginRight: isLTR ? "10px" : "0",
-											order: isLTR ? 0 : 1,
+											marginLeft: isLTR ? "0" : "10px",
 										}}
 									></div>
 
@@ -187,11 +168,9 @@ const SpecialtiesAndSecurity = () => {
 										style={{
 											fontFamily: "'Cairo', sans-serif",
 											textAlign: isLTR ? "left" : "right",
-											fontSize: "clamp(14px, 4vw, 20px)",
-											order: isLTR ? 1 : 0,
 										}}
 									>
-										{highlightText(article.title, searchTerm)}
+										{highlightText(item.name, searchTerm)}
 									</span>
 								</div>
 							</div>
@@ -213,7 +192,7 @@ const SpecialtiesAndSecurity = () => {
 						<p
 							style={{ fontSize: "18px", color: "#666", marginBottom: "20px" }}
 						>
-							{t("security.noResults", { searchTerm })}
+							{t("invest.noResults", { searchTerm })}
 						</p>
 					</div>
 				)}
@@ -234,5 +213,4 @@ const SpecialtiesAndSecurity = () => {
 		</div>
 	);
 };
-
-export default SpecialtiesAndSecurity;
+export default Invest;

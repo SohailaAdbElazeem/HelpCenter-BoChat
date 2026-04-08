@@ -12,6 +12,10 @@ import FAQ from "./components/FAQ/FAQ";
 import JoinUs from "./components/JoinUs/JoinUs";
 import FormPage from "./components/FormPage/FormPage";
 import NewAccount from "./components/NewAccount/NewAccount";
+import Ambassadors from "./components/Ambassadors/Ambassadors";
+import Invest from "./components/Invest/Invest";
+import Developers from "./components/Developers/Developers";
+import { SearchProvider } from "./Context/SearchContext";
 const Router = createBrowserRouter([
 	{
 		path: "",
@@ -29,15 +33,22 @@ const Router = createBrowserRouter([
 			{ path: "joinUs", element: <JoinUs /> },
 			{ path: "formpage", element: <FormPage /> },
 			{ path: "newAccount", element: <NewAccount /> },
+			{ path: "Ambassadors", element: <Ambassadors/> },
+			{ path: "Invest", element: <Invest/> },
+			{ path: "Developers", element: <Developers/> },
+
 		],
 	},
 ]);
 function App() {
 	return (
-		<div className="App">
-			<RouterProvider router={Router}></RouterProvider>
-		</div>
-	);
+		<SearchProvider>
+
+			<div className="App">
+				<RouterProvider router={Router}></RouterProvider>
+			</div>
+		</SearchProvider>
+ 	);
 }
 
 export default App;

@@ -17,7 +17,7 @@ export default function Header() {
 		<div className="main-section">
 			<div className="header">
 				<div className="logo-container">
-					<Link to="/">
+					<Link to="/home">
 						<img src={logo} alt="logo" />
 					</Link>
 					<span className="line"></span>

@@ -23,7 +23,12 @@
 }
 
 .search-input::placeholder {
-	color: #9e9e9e;
+	color: #5E5E5E;
+	font-family: Cairo;
+font-weight: 600;
+ font-size: 20px;
+ line-height: 130%;
+
 }
 
 .search-icon {

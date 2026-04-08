@@ -60,6 +60,16 @@
           "a": "Yes, with top standards. We use end-to-end encryption so only you and the recipient can read messages."
         }
       ]
+    },
+     "search": {
+      "resultsFor": "Search results for",
+      "box": "box",
+      "boxes": "boxes",
+      "faqs": "FAQs",
+      "and": "and",
+      "noResults": "No results found for your search",
+      "noFaqResults": "No FAQs match your search",
+      "clearSearch": "Clear search"
     }
   },
   "footer": {
@@ -89,7 +99,7 @@
     "bottom": "All rights reserved © Panda Oracle IT Company 2025"
   },
   "search": {
-    "placeholder": "Type what you want to search for"
+    "placeholder": "what you want to search for"
   },
  "accountSettings": {
     "title": "Account Settings",
@@ -110,10 +120,17 @@
       "Manage Your Account",
       "Manage Your Account",
       "Manage Your Account"
-    ]
+    ],
+    "searchResults": "Search results for",
+    "result": "result",
+    "results": "results",
+    "noResults": "No settings match your search"
   },
     "faq": {
     "title": "Frequently Asked Questions",
+     "question": "question",
+     "searchResults": "Search results for",
+    "noResults": "No FAQs match your search for \"{{searchTerm}}\"",
     "questions": [
       "If I lose my phone, how can I recover my account without compromising my old data privacy?",
       "How can I customize the app interface to suit my personal taste?",
@@ -125,17 +142,7 @@
       "What security measures are available to protect my account?"
     ]
   },
-  "formPage": {
-    "title": "Submit Request",
-    "email": "Your Email Address",
-    "address": "Address",
-    "description": "Description",
-    "descriptionHint": "Please enter your request details. A support team member will respond as soon as possible.",
-    "attachments": "Attachments",
-    "uploadHint": "Choose a file or drag and drop here",
-    "submit": "Submit Request",
-    "successMessage": "Your request has been received successfully"
-  },
+  
   "joinUs": {
     "title": "Join Us as a Partner",
     "description": "Be part of the BooChat journey. Whether you're a loyal user wanting to spread our message or an investor who believes in our vision of privacy protection, we open doors for you to build the future together.",
@@ -172,8 +179,12 @@
     "notHelpful": "Not helpful",
     "feedbackCount": "1239 out of 1844 found this helpful",
     "articles": "Articles in this section",
-    "articleTitle": "Manage your account"
+    "articleTitle": "Manage your account",
+    "searchResults": "Search results for",
+    "resultsFound": "Matching content found",
+    "noResultsFound": "No matching content found"
   },
+
   
   "personalizeExp": {
     "title": "Personalize Experience",
@@ -192,27 +203,34 @@
     "accessibility": "Accessibility",
     "familySharing": "Family Sharing",
     "paymentMethods": "Payment Methods",
-    "subscriptionPlan": "Subscription Plan"
+    "subscriptionPlan": "Subscription Plan",
+     "searchResults": "Search results for",
+    "result": "option",
+    "results": "options",
+    "noResults": "No options match your search for \"{{searchTerm}}\""
   },
-  
   "quickstart": {
     "title": "Quick Start",
     "gettingStarted": "Getting Started",
     "accountSetup": "Account Setup",
-    "navigation": "Account Setup",
-    "features": "Account Setup",
-    "settings": "Account Setup",
-    "profileSetup": "Account Setup",
-    "messaging":"Account Setup",
-    "notifications": "Account Setup",
-    "privacyBasics": "Account Setup",
-    "securityTips": "Account Setup",
-    "dataSync": "Account Setup",
-    "backupRestore": "Account Setup",
-    "troubleshooting":"Account Setup",
-    "faq":"Account Setup",
-    "support":"Account Setup" ,
-    "feedback":"Account Setup" 
+    "navigation": "App Navigation",
+    "features": "Key Features",
+    "settings": "Settings",
+    "profileSetup": "Profile Setup",
+    "messaging": "Messaging",
+    "notifications": "Notifications",
+    "privacyBasics": "Privacy Basics",
+    "securityTips": "Security Tips",
+    "dataSync": "Data Sync",
+    "backupRestore": "Backup & Restore",
+    "troubleshooting": "Troubleshooting",
+    "faq": "FAQ",
+    "support": "Support",
+    "feedback": "Send Feedback",
+    "searchResults": "Search results for",
+    "result": "guide",
+    "results": "guides",
+    "noResults": "No guides match your search for \"{{searchTerm}}\""
   },
   "smartFeatures": {
     "title": "Smart Features",
@@ -231,7 +249,11 @@
     "autoBackup": "Auto Backup",
     "smartSorting": "Smart Sorting",
     "intentDetection": "Intent Detection",
-    "contextAware": "Context Aware"
+    "contextAware": "Context Aware",
+    "searchResults": "Search results for",
+    "result": "feature",
+    "results": "features",
+    "noResults": "No smart features match your search for \"{{searchTerm}}\""
   },
   "security": {
     "title": "Privacy & Security",
@@ -250,7 +272,11 @@
     "privateMode": "Private Mode",
     "dataPermissions": "Data Permissions",
     "securityAudit": "Security Audit",
-    "vpnProtection": "VPN Protection"
+    "vpnProtection": "VPN Protection",
+    "searchResults": "نتائج البحث عن",
+    "result": "خيار أمان",
+    "results": "خيارات أمان",
+    "noResults": "لا توجد خيارات أمان مطابقة لبحثك عن \"{{searchTerm}}\""
   },
   "subscriptions": {
     "title": "Payments & Subscriptions",
@@ -269,9 +295,101 @@
     "paymentSecurity": "Payment Security",
     "currencySettings": "Currency Settings",
     "subscriptionBenefits": "Subscription Benefits",
-    "customerSupport": "Customer Support"
-  }
+    "customerSupport": "Customer Support",
+     "searchResults": "Search results for",
+    "result": "option",
+    "results": "options",
+    "noResults": "No subscription options match your search for \"{{searchTerm}}\""
+  },
+   "Ambassadors": {
+    "title": "Ambassadors programme",
+    "gettingStarted": "Getting Started",
+    "accountSetup": "Account Setup",
+    "navigation": "Account Setup",
+    "features": "Account Setup",
+    "settings": "Account Setup",
+    "profileSetup": "Account Setup",
+    "messaging":"Account Setup",
+    "notifications": "Account Setup",
+    "privacyBasics": "Account Setup",
+    "securityTips": "Account Setup",
+    "dataSync": "Account Setup",
+    "backupRestore": "Account Setup",
+    "troubleshooting":"Account Setup",
+    "faq":"Account Setup",
+    "support":"Account Setup" ,
+    "feedback":"Account Setup" 
+  },
+ "ambassadors": {
+    "searchResults": "نتائج البحث عن",
+    "result": "سفير",
+    "results": "سفراء",
+    "noResults": "لا توجد نتائج مطابقة لبحثك عن \"{{searchTerm}}\""
+  },
+    "Invest": {
+    "title": "Investment Opportunities",
+    "option1": "Technology Investment",
+    "option2": "Real Estate Investment",
+    "option3": "Stocks and Bonds",
+    "option4": "Startup Investment",
+    "option5": "Gold and Precious Metals",
+    "option6": "Cryptocurrency",
+    "option7": "Investment Funds",
+    "option8": "Agricultural Investment"
+  },
+  "invest": {
+    "searchResults": "Search results for",
+    "result": "investment opportunity",
+    "results": "investment opportunities",
+    "noResults": "No investment opportunities match your search for \"{{searchTerm}}\""
+  },
+    "Developers": {
+    "title": " Developers and contributors",
+    "gettingStarted": "Getting Started",
+    "accountSetup": "Account Setup",
+    "navigation": "Account Setup",
+    "features": "Account Setup",
+    "settings": "Account Setup",
+    "profileSetup": "Account Setup",
+    "messaging":"Account Setup",
+    "notifications": "Account Setup",
+    "privacyBasics": "Account Setup",
+    "securityTips": "Account Setup",
+    "dataSync": "Account Setup",
+    "backupRestore": "Account Setup",
+    "troubleshooting":"Account Setup",
+    "faq":"Account Setup",
+    "support":"Account Setup" ,
+    "feedback":"Account Setup" 
+  },
+   "developers": {
+    "searchResults": "Search results for",
+    "result": "developer",
+    "results": "developers",
+    "noResults": "No results found for \"{{searchTerm}}\""
+  },
 
- 
+  "formPage": {
+    "title": "Submit a request",
+    "email": "Email",
+    "address": "Address",
+    "description": "Description",
+    "descriptionHint": "Please enter your request details. A member of our support team will respond as soon as possible.",
+    "attachments": "Attachments",
+    "uploadHint": "Click to upload or drag files here",
+    "submit": "Submit",
+    "successMessage": "✓ Submitted successfully!",
+    "errors": {
+      "missingFields": "{{count}} required field is missing. Please fill all required fields.",
+      "missingFields_plural": "{{count}} required fields are missing. Please fill all required fields.",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "addressRequired": "Address is required",
+      "addressTooShort": "Address is too short (minimum 3 characters)",
+      "descriptionRequired": "Description is required",
+      "descriptionTooShort": "Description is too short (minimum 10 characters)",
+      "fileRequired": "File is required"
+    }
+  }
 
 }

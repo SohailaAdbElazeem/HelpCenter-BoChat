@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Search from "../Search/Search";
 import { useTranslation } from "react-i18next";
+import { useSearch } from "../../Context/SearchContext";
 
 const AccountSettings = () => {
 	const { t, i18n } = useTranslation();
+	const { searchTerm } = useSearch();
 	const isLTR = i18n.language === "en";
+
+	const settingsItems = t("accountSettings.items", { returnObjects: true });
+
+	const filteredItems = useMemo(() => {
+		if (!searchTerm.trim()) return settingsItems;
+
+		const searchLower = searchTerm.toLowerCase().trim();
+		return settingsItems.filter((item) =>
+			item.toLowerCase().includes(searchLower),
+		);
+	}, [searchTerm, settingsItems]);
 
 	return (
 		<div
@@ -34,22 +47,42 @@ const AccountSettings = () => {
 					</div>
 				</div>
 
-				<div
-					className="row gx-2 gy-3"
-					style={{ marginBottom: "clamp(30px, 15vw, 500px)" }}
-				>
-					{t("accountSettings.items", { returnObjects: true }).map(
-						(item, index) => (
+				{searchTerm && (
+					<div
+						className="search-results"
+						style={{
+							textAlign: isLTR ? "left" : "right",
+							marginBottom: "20px",
+						}}
+					>
+						{/* {t("accountSettings.searchResults")} "{searchTerm}":  */}
+						{/* <strong> {filteredItems.length} </strong>  */}
+						{/* {filteredItems.length === 1 ? t("accountSettings.result") : t("accountSettings.results")} */}
+					</div>
+				)}
+
+				{filteredItems.length > 0 ? (
+					<div
+						className="row gx-2 gy-3"
+						style={{ marginBottom: "clamp(30px, 15vw, 500px)" }}
+					>
+						{filteredItems.map((item, index) => (
 							<div key={index} className="col-12 col-md-6 d-flex">
 								<div
 									className="d-flex align-items-center px-4 shadow-sm"
 									style={{
-										width: "509px",
+										width: "100%",
+										maxWidth: "509px",
 										height: "60px",
 										background: "#EDEDED",
 										borderRadius: "28px",
 										opacity: 1,
 										flexDirection: isLTR ? "row-reverse" : "row",
+										transition: "all 0.3s ease",
+										cursor: "pointer",
+									}}
+									onClick={() => {
+										console.log("Selected:", item);
 									}}
 								>
 									{/* Red Dot */}
@@ -63,7 +96,7 @@ const AccountSettings = () => {
 										}}
 									></div>
 
-									{/* Text */}
+									{/* Text with highlight */}
 									<span
 										className="text-danger fw-semibold fs-5 flex-grow-1 px-3"
 										style={{
@@ -71,16 +104,69 @@ const AccountSettings = () => {
 											textAlign: isLTR ? "left" : "right",
 										}}
 									>
-										{item}
+										{highlightText(item, searchTerm)}
 									</span>
 								</div>
 							</div>
-						),
-					)}
-				</div>
+						))}
+					</div>
+				) : (
+					<div
+						className="no-results"
+						style={{
+							textAlign: "center",
+							padding: "60px 20px",
+							background: "rgba(255, 255, 255, 0.9)",
+							borderRadius: "20px",
+							margin: "40px auto",
+							maxWidth: "500px",
+						}}
+					>
+						<p
+							style={{ fontSize: "18px", color: "#666", marginBottom: "20px" }}
+						>
+							{t("accountSettings.noResults")}
+						</p>
+					</div>
+				)}
 			</div>
 		</div>
 	);
 };
+
+// Helper function to highlight search terms
+function highlightText(text, searchTerm) {
+	if (!searchTerm || !searchTerm.trim()) return text;
+
+	try {
+		const regex = new RegExp(
+			`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
+			"gi",
+		);
+		const parts = text.split(regex);
+
+		return parts.map((part, index) =>
+			regex.test(part) ? (
+				<mark
+					key={index}
+					className="search-highlight"
+					style={{
+						backgroundColor: "rgba(215, 34, 41, 0.2)",
+						color: "#D72229",
+						fontWeight: "bold",
+						padding: "0 2px",
+						borderRadius: "4px",
+					}}
+				>
+					{part}
+				</mark>
+			) : (
+				<span key={index}>{part}</span>
+			),
+		);
+	} catch (error) {
+		return text;
+	}
+}
 
 export default AccountSettings;
