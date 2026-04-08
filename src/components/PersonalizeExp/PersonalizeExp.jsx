@@ -8,7 +8,8 @@ const PersonalizeExp = () => {
 	const { searchTerm } = useSearch();
 	const isLTR = i18n.language === "en";
 
-	const articles = [
+	const articlesWithTranslations = useMemo(() => {
+		const articles = [
 		"manageAccount",
 		"privacySettings",
 		"notificationPrefs",
@@ -26,8 +27,6 @@ const PersonalizeExp = () => {
 		"paymentMethods",
 		"subscriptionPlan",
 	];
-
-	const articlesWithTranslations = useMemo(() => {
 		return articles.map((articleKey) => ({
 			key: articleKey,
 			title: t(`personalizeExp.${articleKey}`),

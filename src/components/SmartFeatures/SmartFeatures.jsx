@@ -8,7 +8,10 @@ const SmartFeatures = () => {
 	const { searchTerm } = useSearch();
 	const isLTR = i18n.language === "en";
 
-	const articles = [
+	
+
+	const featuresWithTranslations = useMemo(() => {
+		const articles = [
 		"aiAssistant",
 		"smartReplies",
 		"voiceCommands",
@@ -26,8 +29,6 @@ const SmartFeatures = () => {
 		"intentDetection",
 		"contextAware",
 	];
-
-	const featuresWithTranslations = useMemo(() => {
 		return articles.map((featureKey) => ({
 			key: featureKey,
 			title: t(`smartFeatures.${featureKey}`),

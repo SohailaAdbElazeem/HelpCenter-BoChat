@@ -8,7 +8,10 @@ const Subscriptions = () => {
 	const { searchTerm } = useSearch(); 
 	const isLTR = i18n.language === "en";
 
-	const articles = [
+	
+
+	const articlesWithTranslations = useMemo(() => {
+		const articles = [
 		"subscriptionPlans",
 		"paymentMethods",
 		"billingHistory",
@@ -26,8 +29,6 @@ const Subscriptions = () => {
 		"subscriptionBenefits",
 		"customerSupport",
 	];
-
-	const articlesWithTranslations = useMemo(() => {
 		return articles.map(articleKey => ({
 			key: articleKey,
 			title: t(`subscriptions.${articleKey}`)

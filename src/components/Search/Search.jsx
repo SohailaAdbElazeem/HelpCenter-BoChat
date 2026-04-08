@@ -6,7 +6,8 @@ import "./Search.css";
 
 export default function Search({ onChange }) {
 	const { t, i18n } = useTranslation();
-	const { searchTerm, setSearchTerm, clearSearch } = useSearch();
+	// const { searchTerm, setSearchTerm, clearSearch } = useSearch();
+	const { searchTerm, setSearchTerm } = useSearch();
 	const isLTR = i18n.language === "en";
 
 	const handleChange = (e) => {
@@ -18,12 +19,12 @@ export default function Search({ onChange }) {
 		}
 	};
 
-	const handleClear = () => {
-		clearSearch();
-		if (onChange) {
-			onChange({ target: { value: "" } });
-		}
-	};
+	// const handleClear = () => {
+	// 	clearSearch();
+	// 	if (onChange) {
+	// 		onChange({ target: { value: "" } });
+	// 	}
+	// };
 
 	return (
 		<div className={`search-container ${isLTR ? "ltr" : "rtl"}`}>

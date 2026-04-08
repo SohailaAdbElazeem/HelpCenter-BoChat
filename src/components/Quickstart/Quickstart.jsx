@@ -8,7 +8,10 @@ const Quickstart = () => {
 	const { searchTerm } = useSearch();
 	const isLTR = i18n.language === "en";
 
-	const articles = [
+	
+
+	const articlesWithTranslations = useMemo(() => {
+		const articles = [
 		"gettingStarted",
 		"accountSetup",
 		"navigation",
@@ -26,8 +29,6 @@ const Quickstart = () => {
 		"support",
 		"feedback",
 	];
-
-	const articlesWithTranslations = useMemo(() => {
 		return articles.map((articleKey) => ({
 			key: articleKey,
 			title: t(`quickstart.${articleKey}`),

@@ -8,7 +8,10 @@ const SpecialtiesAndSecurity = () => {
 	const { searchTerm } = useSearch();
 	const isLTR = i18n.language === "en";
 
-	const articles = [
+	
+
+	const articlesWithTranslations = useMemo(() => {
+		const articles = [
 		"dataEncryption",
 		"twoFactorAuth",
 		"privacySettings",
@@ -26,8 +29,6 @@ const SpecialtiesAndSecurity = () => {
 		"securityAudit",
 		"vpnProtection",
 	];
-
-	const articlesWithTranslations = useMemo(() => {
 		return articles.map((articleKey) => ({
 			key: articleKey,
 			title: t(`security.${articleKey}`),

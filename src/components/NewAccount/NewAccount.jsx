@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import  { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import Search from "../Search/Search";
 import { useSearch } from "../../Context/SearchContext";
@@ -35,7 +35,7 @@ export default function NewAccount() {
 			articles
 		};
 	}, [t]);
-
+// eslint-disable-next-line no-unused-vars
  	const isSearchMatch = useMemo(() => {
 		if (!searchTerm.trim()) return true;
 		

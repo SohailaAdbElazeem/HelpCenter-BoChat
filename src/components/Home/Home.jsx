@@ -61,7 +61,7 @@ export default function Home() {
 		if (searchTerm && activeIndex !== null) {
 			setActiveIndex(null);
 		}
-	}, [searchTerm]);
+	}, [searchTerm,activeIndex]);
 
 	return (
 		<div className="home-container">
@@ -197,8 +197,7 @@ export default function Home() {
 	);
 }
 
-// Helper function to highlight search terms
-function highlightText(text, searchTerm) {
+ function highlightText(text, searchTerm) {
 	if (!searchTerm || !searchTerm.trim()) return text;
 
 	try {

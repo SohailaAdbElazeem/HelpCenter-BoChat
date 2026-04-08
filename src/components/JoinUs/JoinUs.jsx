@@ -14,7 +14,10 @@ export default function JoinUs() {
 	const isLTR = i18n.language === "en";
 	const navigate = useNavigate();
 
-	const boxesData = [
+	
+
+ 	const boxesWithTranslations = useMemo(() => {
+		const boxesData = [
 		{
 			imageUrl: hand,
 			headerKey: "joinUs.ambassadorProgram",
@@ -34,14 +37,12 @@ export default function JoinUs() {
 			path: '/Developers'
 		},
 	];
-
- 	const boxesWithTranslations = useMemo(() => {
 		return boxesData.map(box => ({
 			...box,
 			header: t(box.headerKey),
 			text: t(box.textKey)
 		}));
-	}, [t, boxesData]);
+	}, [t]);
 
 	const filteredBoxes = useMemo(() => {
 		if (!searchTerm.trim()) return boxesWithTranslations;
