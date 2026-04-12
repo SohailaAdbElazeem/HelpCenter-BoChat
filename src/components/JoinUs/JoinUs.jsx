@@ -4,9 +4,9 @@ import Search from "../Search/Search";
 import "./JoinUs.modules.css";
 import { useNavigate } from "react-router-dom";
 import { useSearch } from "../../Context/SearchContext";
-import hand from "../../assests/hand.PNG";
-import edit from "../../assests/edit.PNG";
-import Static from "../../assests/Sta.PNG";
+import hand from "../../assests/Vector (2).svg";
+import Static  from "../../assests/chart-mixed-up-circle-dollar 1.svg";
+import edit from "../../assests/code-editing 1.svg";
 
 export default function JoinUs() {
 	const { t, i18n } = useTranslation();
@@ -162,8 +162,8 @@ export default function JoinUs() {
 										src={box.imageUrl}
 										alt={box.header}
 										style={{
-											width: "40px",
-											height: "40px",
+											width: "29px",
+											height: "29px",
 											objectFit: "contain",
 										}}
 									/>

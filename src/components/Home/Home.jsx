@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import "./Home.modules.css";
 import plus from "../../assests/plus.svg";
+import close from "../../assests/x.svg"
 import Search from "../Search/Search";
 import { Link, useNavigate } from "react-router-dom";
 import userLock from "../../assests/user-lock 1.svg";
@@ -9,7 +10,7 @@ import feature from "../../assests/features 1.svg";
 import uxbrowser from "../../assests/ux-browser 1.svg";
 import setting from "../../assests/Vector (1).svg";
 import creadit from "../../assests/credit-card 1.svg";
-import brain from "../../assests/brain.PNG";
+import brain from "../../assests/hands-brain 1.svg";
 import { useTranslation } from "react-i18next";
 import { useSearch } from "../../Context/SearchContext";
 
@@ -144,7 +145,7 @@ export default function Home() {
 			{/* Problem */}
 			<div className={`proplem ${i18n.language === "en" ? "ltr" : "rtl"}`}>
 				<div className="proplem-img">
-					<img src={brain} alt="brain" style={{ width: "38px" }} />
+					<img src={brain} alt="brain" style={{ width: "28px" ,height:"28px"}} />
 				</div>
 				<div className="proplem-text">
 					<h3>{t("home.problem.title")}</h3>
@@ -172,8 +173,11 @@ export default function Home() {
 									onClick={() => toggleQuestion(index)}
 								>
 									<div className="question">
-										<img src={plus} alt="toggle" />
-										<p>{highlightText(item.q, searchTerm)}</p>
+ 									<img
+										src={activeIndex === index ? close : plus}
+										alt="toggle"
+									/>										
+									<p>{highlightText(item.q, searchTerm)}</p>
 									</div>
 									<div className="answer">
 										<p>{highlightText(item.a, searchTerm)}</p>

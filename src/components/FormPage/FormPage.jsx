@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-
+import "./FormPage.modules.css"
 export default function FormPage() {
 	const { t, i18n } = useTranslation();
 	const [showToast, setShowToast] = useState(false);
@@ -144,7 +144,7 @@ export default function FormPage() {
 						{t("formPage.title")}
 					</h2>
 				</div>
-				<form className="mx-auto" style={{ maxWidth: "min(1033px, 70%)" }}>
+				<form  className="custom-form">
 					{/* Email */}
 					<div className="mb-4">
 						<label
