@@ -214,6 +214,7 @@ const ArticlesByCategory = () => {
 
   useEffect(() => {
     if (ctg) fetchArticles();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ctg]);
 
   const filteredArticles = useMemo(() => {
