@@ -1,82 +1,158 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Search from "../Search/Search";
 import { useSearch } from "../../Context/SearchContext";
+import { useNavigate } from "react-router-dom";
+import { increaseArticleView } from "../../utils/increaseArticleView";
 
 const SmartFeatures = () => {
 	const { t, i18n } = useTranslation();
 	const { searchTerm } = useSearch();
 	const isLTR = i18n.language === "en";
-
+	const navigate = useNavigate();
 	
+	// status of data
+	const [articles, setArticles] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+	const URL = "https://bo-chat.space";
 
-	const featuresWithTranslations = useMemo(() => {
-		const articles = [
-		"aiAssistant",
-		"smartReplies",
-		"voiceCommands",
-		"autoTranslate",
-		"smartSearch",
-		"predictiveText",
-		"faceRecognition",
-		"smartNotifications",
-		"autoOrganize",
-		"smartFilters",
-		"voiceToText",
-		"smartSuggestions",
-		"autoBackup",
-		"smartSorting",
-		"intentDetection",
-		"contextAware",
-	];
-		return articles.map((featureKey) => ({
-			key: featureKey,
-			title: t(`smartFeatures.${featureKey}`),
-		}));
-	}, [t]);
+// fetch data from API
+//   const fetchArticles = async () => {
+// 	try {
+// 	  setLoading(true);
+// 	  setError("");
 
-	const filteredFeatures = useMemo(() => {
-		if (!searchTerm.trim()) return featuresWithTranslations;
+// 	  const token = localStorage.getItem("token");
 
-		const searchLower = searchTerm.toLowerCase().trim();
-		return featuresWithTranslations.filter((feature) =>
-			feature.title.toLowerCase().includes(searchLower),
+// 	  const res = await fetch(
+// 		`${URL}/dashboard/ArticlesByType/المميزات الذكية`,
+// 		{
+// 		  method: "GET",
+// 		  headers: {
+// 			"Content-Type": "application/json",
+// 			Authorization: `Bearer ${token}`, 
+// 		  },
+// 		}
+// 	  );
+
+// 	  if (!res.ok) {
+// 		throw new Error(`HTTP error! status: ${res.status}`);
+// 	  }
+
+// 	  const data = await res.json();
+
+// 	  console.log("API DATA:", data);
+
+// 	  setArticles(data.response || []);
+// 	} catch (err) {
+// 	  console.error("Error fetching articles:", err);
+// 	  setError("Failed to load articles");
+// 	} finally {
+// 	  setLoading(false);
+// 	}
+//   };
+const fetchArticles = async () => {
+  try {
+    setLoading(true);
+    setError("");
+
+    const token = localStorage.getItem("token");
+
+    const res = await fetch(
+      `${URL}/dashboard/articles/AllByCTG?page=1&limit=10&ctg=3`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const data = await res.json();
+    setArticles(data.response || []);
+  } catch (err) {
+    setError("Failed to load articles");
+  } finally {
+    setLoading(false);
+  }
+};
+  useEffect(() => {
+	fetchArticles();
+  }, []);
+
+  // search filter
+  const filteredArticles = useMemo(() => {
+	if (!searchTerm.trim()) return articles;
+
+	return articles.filter((article) =>
+	  article.title.toLowerCase().includes(searchTerm.toLowerCase())
+	);
+  }, [searchTerm, articles]);
+	//  highlight search
+  const highlightText = (text, searchTerm) => {
+	if (!searchTerm) return text;
+
+	const regex = new RegExp(`(${searchTerm})`, "gi");
+	const parts = text.split(regex);
+
+	return parts.map((part, i) =>
+	  regex.test(part) ? (
+		<mark key={i} style={{ color: "red" }}>
+		  {part}
+		</mark>
+	  ) : (
+		part
+	  )
+	);
+  };
+
+	if (loading) {
+		return (
+			<div
+				className="min-vh-100 d-flex align-items-center justify-content-center"
+				style={{
+					background:
+						"linear-gradient(180deg, #D72229 30%, rgba(215, 34, 41, 0) 100%)",
+				}}
+			>
+				<div className="text-center text-white">
+					<div className="spinner-border text-light" role="status">
+						<span className="visually-hidden">جاري التحميل...</span>
+					</div>
+					<p className="mt-3">جاري تحميل المقالات...</p>
+				</div>
+			</div>
 		);
-	}, [searchTerm, featuresWithTranslations]);
+	}
 
-	const highlightText = (text, searchTerm) => {
-		if (!searchTerm || !searchTerm.trim()) return text;
-
-		try {
-			const regex = new RegExp(
-				`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
-				"gi",
-			);
-			const parts = text.split(regex);
-
-			return parts.map((part, index) =>
-				regex.test(part) ? (
-					<mark
-						key={index}
-						className="search-highlight"
-						style={{
-							backgroundColor: "rgba(215, 34, 41, 0.2)",
-							color: "#D72229",
-							fontWeight: "bold",
-							padding: "0 2px",
-							borderRadius: "4px",
-						}}
+	if (error) {
+		return (
+			<div
+				className="min-vh-100 d-flex align-items-center justify-content-center"
+				style={{
+					background:
+						"linear-gradient(180deg, #D72229 30%, rgba(215, 34, 41, 0) 100%)",
+				}}
+			>
+				<div className="text-center text-white bg-danger bg-opacity-75 p-4 rounded-4">
+					<h4>حدث خطأ</h4>
+					<p>{error}</p>
+					<button
+						className="btn btn-light mt-2"
+						onClick={() => window.location.reload()}
 					>
-						{part}
-					</mark>
-				) : (
-					<span key={index}>{part}</span>
-				),
-			);
-		} catch (error) {
-			return text;
-		}
-	};
+						إعادة المحاولة
+					</button>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<div
@@ -87,20 +163,19 @@ const SmartFeatures = () => {
 				direction: isLTR ? "ltr" : "rtl",
 			}}
 		>
-			<div className="w-100" style={{ maxWidth: "1100px", margin: "0 auto" }}>
-				{/* Search */}
+			<div className="w-100" style={{ maxWidth: "1050px", margin: "0 auto" }}>
 				<Search />
 
 				{/* Header */}
-				<div className="mb-5">
+				<div className="mb-5 Head-title">
 					<div
 						className="fw-bold"
 						style={{
 							fontFamily: "'Cairo', sans-serif",
 							fontWeight: 700,
-							color: "#000000",
 							fontSize: "clamp(30px, 8vw, 65px)",
 							lineHeight: "clamp(35px, 6vw, 55px)",
+							color: "#000000",
 							margin: "clamp(20px, 10vw, 90px) 0 clamp(20px, 8vw, 60px) 0",
 							textAlign: isLTR ? "left" : "right",
 						}}
@@ -109,39 +184,14 @@ const SmartFeatures = () => {
 					</div>
 				</div>
 
-				{/* Search Results Info */}
-				{searchTerm && (
-					<div
-						className="search-results-info"
-						style={
-							{
-								// textAlign: isLTR ? "left" : "right",
-								// marginBottom: "20px",
-								// padding: "12px 20px",
-								// // background: "rgba(255, 255, 255, 0.95)",
-								// borderRadius: "12px",
-								// color: "#D72229",
-								// fontWeight: 500,
-								// maxWidth: "600px",
-								// margin: "0 auto 20px auto",
-								// animation: "fadeIn 0.3s ease-in-out",
-							}
-						}
-					>
-						{/* 🔍 {t("smartFeatures.searchResults")} "{searchTerm}": 
-						<strong> {filteredFeatures.length} </strong> 
-						{filteredFeatures.length === 1 ? t("smartFeatures.result") : t("smartFeatures.results")} */}
-					</div>
-				)}
-
-				{/* Buttons Grid */}
-				{filteredFeatures.length > 0 ? (
+				{/* شبكة الأزرار */}
+				{filteredArticles.length > 0 ? (
 					<div
 						className="row gx-2 gy-3"
 						style={{ marginBottom: "clamp(30px, 15vw, 500px)" }}
 					>
-						{filteredFeatures.map((feature, index) => (
-							<div key={feature.key} className="col-12 col-md-6 d-flex">
+						{filteredArticles.map((article) => (
+							<div key={article.id} className="col-12 col-md-6 d-flex">
 								<div
 									className="d-flex align-items-center px-4 shadow-sm"
 									style={{
@@ -167,10 +217,13 @@ const SmartFeatures = () => {
 										e.currentTarget.style.background = "#EDEDED";
 									}}
 									onClick={() => {
-										console.log("Feature clicked:", feature.title);
+										// يمكنك التوجيه إلى صفحة تفاصيل المقال هنا
+										console.log("Article clicked:", article.title, article.id);
+											increaseArticleView(article._id);
+										navigate(`/article/${article._id}`);
+
 									}}
 								>
-									{/* Red Dot */}
 									<div
 										className="bg-danger rounded-circle flex-shrink-0"
 										style={{
@@ -182,7 +235,6 @@ const SmartFeatures = () => {
 										}}
 									></div>
 
-									{/* Text with highlight */}
 									<span
 										className="text-danger fw-semibold fs-5 flex-grow-1 px-3"
 										style={{
@@ -192,7 +244,7 @@ const SmartFeatures = () => {
 											order: isLTR ? 1 : 0,
 										}}
 									>
-										{highlightText(feature.title, searchTerm)}
+										{highlightText(article.title, searchTerm)}
 									</span>
 								</div>
 							</div>
@@ -214,7 +266,7 @@ const SmartFeatures = () => {
 						<p
 							style={{ fontSize: "18px", color: "#666", marginBottom: "20px" }}
 						>
-							{t("smartFeatures.noResults", { searchTerm })}
+							{t("security.noResults", { searchTerm })}
 						</p>
 					</div>
 				)}

@@ -3,7 +3,7 @@ import "./FAQ.modules.CSS";
 import Search from "../Search/Search";
 import { useTranslation } from "react-i18next";
 import { useSearch } from "../../Context/SearchContext";
-
+ 
 export default function FAQ() {
 	const { t, i18n } = useTranslation();
 	const { searchTerm } = useSearch();

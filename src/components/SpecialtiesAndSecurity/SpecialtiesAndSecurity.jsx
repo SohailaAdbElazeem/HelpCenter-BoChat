@@ -1,82 +1,128 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Search from "../Search/Search";
 import { useSearch } from "../../Context/SearchContext";
+import { useNavigate } from "react-router-dom";
+import { increaseArticleView } from "../../utils/increaseArticleView";
 
 const SpecialtiesAndSecurity = () => {
 	const { t, i18n } = useTranslation();
 	const { searchTerm } = useSearch();
 	const isLTR = i18n.language === "en";
+     const navigate = useNavigate();
+	// status of data
+	const [articles, setArticles] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+  	const URL = "https://bo-chat.space";
 
-	
+ 
 
-	const articlesWithTranslations = useMemo(() => {
-		const articles = [
-		"dataEncryption",
-		"twoFactorAuth",
-		"privacySettings",
-		"dataBackup",
-		"secureLogin",
-		"accountRecovery",
-		"sessionManagement",
-		"deviceManagement",
-		"dataDeletion",
-		"securityAlerts",
-		"biometricAuth",
-		"secureSharing",
-		"privateMode",
-		"dataPermissions",
-		"securityAudit",
-		"vpnProtection",
-	];
-		return articles.map((articleKey) => ({
-			key: articleKey,
-			title: t(`security.${articleKey}`),
-		}));
-	}, [t]);
+const fetchArticles = async () => {
+  try {
+    setLoading(true);
+    setError("");
 
-	const filteredArticles = useMemo(() => {
-		if (!searchTerm.trim()) return articlesWithTranslations;
+    const token = localStorage.getItem("token");
 
-		const searchLower = searchTerm.toLowerCase().trim();
-		return articlesWithTranslations.filter((article) =>
-			article.title.toLowerCase().includes(searchLower),
+    const res = await fetch(
+      `${URL}/dashboard/articles/AllByCTG?page=1&limit=10&ctg=1`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const data = await res.json();
+
+    console.log("API DATA:", data);
+
+    setArticles(data.response || []);
+  } catch (err) {
+    console.error("Error fetching articles:", err);
+    setError("Failed to load articles");
+  } finally {
+    setLoading(false);
+  }
+};
+  useEffect(() => {
+    fetchArticles();
+  }, []);
+
+  // search filter
+  const filteredArticles = useMemo(() => {
+    if (!searchTerm.trim()) return articles;
+
+    return articles.filter((article) =>
+      article.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [searchTerm, articles]);
+ 	//  highlight search
+  const highlightText = (text, searchTerm) => {
+    if (!searchTerm) return text;
+
+    const regex = new RegExp(`(${searchTerm})`, "gi");
+    const parts = text.split(regex);
+
+    return parts.map((part, i) =>
+      regex.test(part) ? (
+        <mark key={i} style={{ color: "red" }}>
+          {part}
+        </mark>
+      ) : (
+        part
+      )
+    );
+  };
+
+ 	if (loading) {
+		return (
+			<div
+				className="min-vh-100 d-flex align-items-center justify-content-center"
+				style={{
+					background:
+						"linear-gradient(180deg, #D72229 30%, rgba(215, 34, 41, 0) 100%)",
+				}}
+			>
+				<div className="text-center text-white">
+					<div className="spinner-border text-light" role="status">
+						<span className="visually-hidden">جاري التحميل...</span>
+					</div>
+					<p className="mt-3">جاري تحميل المقالات...</p>
+				</div>
+			</div>
 		);
-	}, [searchTerm, articlesWithTranslations]);
+	}
 
-	const highlightText = (text, searchTerm) => {
-		if (!searchTerm || !searchTerm.trim()) return text;
-
-		try {
-			const regex = new RegExp(
-				`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
-				"gi",
-			);
-			const parts = text.split(regex);
-
-			return parts.map((part, index) =>
-				regex.test(part) ? (
-					<mark
-						key={index}
-						className="search-highlight"
-						style={{
-							backgroundColor: "rgba(215, 34, 41, 0.2)",
-							color: "#D72229",
-							fontWeight: "bold",
-							padding: "0 2px",
-							borderRadius: "4px",
-						}}
+ 	if (error) {
+		return (
+			<div
+				className="min-vh-100 d-flex align-items-center justify-content-center"
+				style={{
+					background:
+						"linear-gradient(180deg, #D72229 30%, rgba(215, 34, 41, 0) 100%)",
+				}}
+			>
+				<div className="text-center text-white bg-danger bg-opacity-75 p-4 rounded-4">
+					<h4>حدث خطأ</h4>
+					<p>{error}</p>
+					<button
+						className="btn btn-light mt-2"
+						onClick={() => window.location.reload()}
 					>
-						{part}
-					</mark>
-				) : (
-					<span key={index}>{part}</span>
-				),
-			);
-		} catch (error) {
-			return text;
-		}
-	};
+						إعادة المحاولة
+					</button>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<div
@@ -88,7 +134,6 @@ const SpecialtiesAndSecurity = () => {
 			}}
 		>
 			<div className="w-100" style={{ maxWidth: "1050px", margin: "0 auto" }}>
-				{/* Search */}
 				<Search />
 
 				{/* Header */}
@@ -109,39 +154,14 @@ const SpecialtiesAndSecurity = () => {
 					</div>
 				</div>
 
-				{/* Search Results Info */}
-				{searchTerm && (
-					<div
-						className="search-results-info"
-						style={
-							{
-								// textAlign: isLTR ? "left" : "right",
-								// marginBottom: "20px",
-								// padding: "12px 20px",
-								// background: "rgba(255, 255, 255, 0.95)",
-								// borderRadius: "12px",
-								// color: "#D72229",
-								// fontWeight: 500,
-								// maxWidth: "600px",
-								// margin: "0 auto 20px auto",
-								// animation: "fadeIn 0.3s ease-in-out",
-							}
-						}
-					>
-						{/* 🔍 {t("security.searchResults")} "{searchTerm}": 
-						<strong> {filteredArticles.length} </strong> 
-						{filteredArticles.length === 1 ? t("security.result") : t("security.results")} */}
-					</div>
-				)}
-
-				{/* Buttons Grid */}
+				{/* شبكة الأزرار */}
 				{filteredArticles.length > 0 ? (
 					<div
 						className="row gx-2 gy-3"
 						style={{ marginBottom: "clamp(30px, 15vw, 500px)" }}
 					>
-						{filteredArticles.map((article, index) => (
-							<div key={article.key} className="col-12 col-md-6 d-flex">
+						{filteredArticles.map((article) => (
+							<div key={article.id} className="col-12 col-md-6 d-flex">
 								<div
 									className="d-flex align-items-center px-4 shadow-sm"
 									style={{
@@ -167,10 +187,11 @@ const SpecialtiesAndSecurity = () => {
 										e.currentTarget.style.background = "#EDEDED";
 									}}
 									onClick={() => {
-										console.log("Security article clicked:", article.title);
+ 										console.log("Article clicked:", article.title, article.id);	
+										increaseArticleView(article._id);
+										navigate(`/article/${article._id}`);
 									}}
 								>
-									{/* Red Dot */}
 									<div
 										className="bg-danger rounded-circle flex-shrink-0"
 										style={{
@@ -182,7 +203,6 @@ const SpecialtiesAndSecurity = () => {
 										}}
 									></div>
 
-									{/* Text with highlight */}
 									<span
 										className="text-danger fw-semibold fs-5 flex-grow-1 px-3"
 										style={{

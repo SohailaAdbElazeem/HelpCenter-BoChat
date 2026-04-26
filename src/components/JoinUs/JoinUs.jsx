@@ -17,27 +17,46 @@ export default function JoinUs() {
 	
 
  	const boxesWithTranslations = useMemo(() => {
-		const boxesData = [
-		{
-			imageUrl: hand,
-			headerKey: "joinUs.ambassadorProgram",
-			textKey: "joinUs.ambassadorText",
-			path: "/Ambassadors"
-		},
-		{
-			imageUrl: Static,
-			headerKey: "joinUs.investWithUs",
-			textKey: "joinUs.investText",
-			path: '/Invest'
-		},
-		{
-			imageUrl: edit,
-			headerKey: "joinUs.developers",
-			textKey: "joinUs.developersText",
-			path: '/Developers'
-		},
-	];
-		return boxesData.map(box => ({
+	// 	const boxesData = [
+	// 	{
+	// 		imageUrl: hand,
+	// 		headerKey: "joinUs.ambassadorProgram",
+	// 		textKey: "joinUs.ambassadorText",
+	// 		path: "/Ambassadors"
+	// 	},
+	// 	{
+	// 		imageUrl: Static,
+	// 		headerKey: "joinUs.investWithUs",
+	// 		textKey: "joinUs.investText",
+	// 		path: '/Invest'
+	// 	},
+	// 	{
+	// 		imageUrl: edit,
+	// 		headerKey: "joinUs.developers",
+	// 		textKey: "joinUs.developersText",
+	// 		path: '/Developers'
+	// 	},
+	// ];
+	 const boxesData = [
+    {
+      imageUrl: hand,
+      headerKey: "joinUs.ambassadorProgram",
+      textKey: "joinUs.ambassadorText",
+      ctg: 7,
+    },
+    {
+      imageUrl: Static,
+      headerKey: "joinUs.investWithUs",
+      textKey: "joinUs.investText",
+      ctg: 8,
+    },  {
+      imageUrl: edit,
+      headerKey: "joinUs.developers",
+      textKey: "joinUs.developersText",
+      ctg: 9,
+    },
+  ];	
+	return boxesData.map(box => ({
 			...box,
 			header: t(box.headerKey),
 			text: t(box.textKey)
@@ -132,7 +151,8 @@ export default function JoinUs() {
 						<div 
 							className="box" 
 							key={index} 						
-							onClick={() => navigate(box.path)}
+							// onClick={() => navigate(box.path)}
+							 onClick={() => navigate(`/category/${box.ctg}`)}
 							style={{ 
 								cursor: "pointer",
 								animation: "fadeIn 0.3s ease-in-out",

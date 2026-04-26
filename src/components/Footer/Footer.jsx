@@ -17,8 +17,9 @@ export default function Footer() {
 				<div className="footer-column">
 					<h3>{t("footer.company.title")}</h3>
 					<ul>
+						 
 						<li>
-							<a href="https://bo-eg.site/AboutUs.html">
+							<a href="https://bo-eg.site/PandaOracle.html">
 								{t("footer.company.about")}
 							</a>
 						</li>
@@ -86,6 +87,19 @@ export default function Footer() {
 								{t("footer.legal.privacyCenter")}
 							</a>
 						</li>
+						<li>
+							<a href="https://bo-eg.site/BoShield.html">
+								{t("footer.legal.Shield")}
+							</a>
+						</li>
+						<li>
+							<a href="https://bo-eg.site/ProfitsSystem.html">
+								{t("footer.legal.Profit")}
+							</a>
+						</li>
+
+						 {/* <li><a href="/BoShield.html" data-ar="درع بو شات" data-en="Bo Chat Shield"> درع بو شات</a></li> */}
+                          {/* <li><a href="/ProfitsSystem.html" data-ar="نظام الربح" data-en="Profit system">  نظام الربح </a></li> */}
 					</ul>
 				</div>
 
