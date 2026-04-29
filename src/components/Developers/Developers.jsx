@@ -381,61 +381,66 @@ const Developers = () => {
 
         {/* Articles grid */}
         {filteredArticles.length > 0 ? (
-          <div className="row gx-2 gy-3" style={{ marginBottom: "clamp(30px, 15vw, 500px)" }}>
-            {filteredArticles.map((article) => (
-              <div key={article._id} className="col-12 col-md-6 d-flex">
-                <div
-                  className="d-flex align-items-center px-4 shadow-sm"
-                  style={{
-                    width: "100%",
-                    height: "60px",
-                    background: "#EDEDED",
-                    borderRadius: "28px",
-                    opacity: 1,
-                    flexDirection: isLTR ? "row" : "row-reverse",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    animation: "fadeIn 0.3s ease-in-out",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.15)";
-                    e.currentTarget.style.background = "#e0e0e0";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "none";
-                    e.currentTarget.style.background = "#EDEDED";
-                  }}
-                  onClick={() => {
-                    navigate(`/article/${article._id}`);
-                  }}
-                >
-                  <div
-                    className="bg-danger rounded-circle flex-shrink-0"
-                    style={{
-                      width: "12px",
-                      height: "12px",
-                      marginLeft: isLTR ? "0" : "auto",
-                      marginRight: isLTR ? "10px" : "0",
-                      order: isLTR ? 0 : 1,
-                    }}
-                  />
-                  <span
-                    className="text-danger fw-semibold fs-5 flex-grow-1 px-3"
-                    style={{
-                      fontFamily: "'Cairo', sans-serif",
-                      textAlign: isLTR ? "left" : "right",
-                      fontSize: "clamp(14px, 4vw, 20px)",
-                      order: isLTR ? 1 : 0,
-                    }}
-                  >
-                    {highlightText(article.title, searchTerm)}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+            <div className="row gx-2 gy-3" style={{ marginBottom: "clamp(-20px, 15vw, 500px)" }}>
+  {filteredArticles.map((article) => (
+    <div key={article._id} className="col-12 col-md-6 d-flex">
+      <div
+        className="d-flex align-items-center px-4 shadow-sm"
+        style={{
+          width: "100%",
+          minHeight:"60px",
+          Height: "auto",          
+          background: "#EDEDED",
+          borderRadius: "28px",
+          // flexDirection: isLTR ? "row" : "row-reverse",
+          cursor: "pointer",
+          transition: "all 0.3s ease",
+          animation: "fadeIn 0.3s ease-in-out",
+          padding: "8px 16px",         // padding داخلي ثابت بدلاً من px-4 الأكبر
+          gap: "8px",                  // مسافة بين الدائرة والنص
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-2px)";
+          e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.15)";
+          e.currentTarget.style.background = "#e0e0e0";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0)";
+          e.currentTarget.style.boxShadow = "none";
+          e.currentTarget.style.background = "#EDEDED";
+        }}
+        onClick={() => navigate(`/article/${article._id}`)}
+      >
+        <div
+          className="bg-danger rounded-circle flex-shrink-0"
+          style={{
+            width: "clamp(10px, 3vw, 12px)",
+            height: "clamp(10px, 3vw, 12px)",
+          }}
+        />
+        <span
+          className="fw-semibold flex-grow-1"
+          style={{
+            fontFamily: "'Cairo', sans-serif",
+            textAlign: isLTR ? "left" : "right",
+            // حجم الخط: أصغر للإنجليزية في الشاشات الصغيرة
+            fontSize: isLTR 
+              ? "clamp(12px, 3vw, 16px)" 
+              : "clamp(14px, 4vw, 18px)",
+            wordBreak: "break-word",
+            overflowWrap: "break-word",
+            whiteSpace: "normal",
+            lineHeight: "1.4",
+            color: "#D72229",
+            minWidth: 0,  // يمنع تمدد النص خارج الحاوية
+          }}
+        >
+          {highlightText(article.title, searchTerm)}
+        </span>
+      </div>
+    </div>
+  ))}
+</div>
         ) : (
           <div
             className="no-results"
