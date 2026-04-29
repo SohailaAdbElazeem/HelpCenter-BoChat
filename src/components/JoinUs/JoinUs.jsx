@@ -279,48 +279,49 @@ export default function JoinUs() {
 
   // ✅ FIX 2: add boxesData to dependencies
   const filteredBoxes = useMemo(() => {
-    if (!searchTerm.trim()) return boxesData;
+  const search = (searchTerm || "").trim();
 
-    const searchLower = searchTerm.toLowerCase().trim();
-    return boxesData.filter(
-      (box) =>
-        box.header.toLowerCase().includes(searchLower) ||
-        box.text.toLowerCase().includes(searchLower)
-    );
-  }, [searchTerm, boxesData]);
+  if (!search) return boxesData;
+
+  const searchLower = search.toLowerCase();
+
+  return boxesData.filter(
+    (box) =>
+      box.header.toLowerCase().includes(searchLower) ||
+      box.text.toLowerCase().includes(searchLower)
+  );
+}, [searchTerm, boxesData]);
 
   // Highlight search term
-  const highlightText = (text, searchTerm) => {
-    if (!searchTerm || !searchTerm.trim()) return text;
+const highlightText = (text, searchTerm) => {
+  if (!searchTerm || !searchTerm.trim() || !text) return text;
 
-    try {
-      const escaped = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      const regex = new RegExp(`(${escaped})`, "gi");
-      const parts = text.split(regex);
+  try {
+    const escaped = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(`(${escaped})`, "gi");
 
-      return parts.map((part, index) =>
-        regex.test(part) ? (
-          <mark
-            key={index}
-            className="search-highlight"
-            style={{
-              backgroundColor: "rgba(215, 34, 41, 0.2)",
-              color: "#D72229",
-              fontWeight: "bold",
-              padding: "0 2px",
-              borderRadius: "4px",
-            }}
-          >
-            {part}
-          </mark>
-        ) : (
-          <span key={index}>{part}</span>
-        )
-      );
-    } catch (error) {
-      return text;
-    }
-  };
+    return text.split(regex).map((part, index) =>
+      part.toLowerCase() === searchTerm.toLowerCase() ? (
+        <mark
+          key={index}
+          style={{
+            backgroundColor: "rgba(215, 34, 41, 0.2)",
+            color: "#D72229",
+            fontWeight: "bold",
+            padding: "0 2px",
+            borderRadius: "4px",
+          }}
+        >
+          {part}
+        </mark>
+      ) : (
+        part
+      )
+    );
+  } catch {
+    return text;
+  }
+};
 
   return (
     <div className="joinSec" style={{ direction: "rtl" }}>

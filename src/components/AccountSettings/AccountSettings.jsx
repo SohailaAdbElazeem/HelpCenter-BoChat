@@ -303,17 +303,16 @@ const AccountSettings = () => {
   const navigate = useNavigate();
 
   // Get all static articles from i18n (re‑evaluates when language changes)
+const articles = useMemo(() => {
   const allStaticArticles = t("staticArticles", { returnObjects: true }) || {};
 
-  // Filter only those with ctg = 1 (Privacy & Security)
-  const articles = useMemo(() => {
-    return Object.values(allStaticArticles)
-      .filter((article) => article.ctg === 5)
-      .map((article) => ({
-        ...article,
-        _id: article._id,
-      }));
-  }, [allStaticArticles]); //ependency forces update
+  return Object.values(allStaticArticles)
+    .filter((article) => article.ctg === 5)
+    .map((article) => ({
+      ...article,
+      _id: article._id,
+    }));
+}, [t]);
 
   // Filter by search term
   const filteredArticles = useMemo(() => {

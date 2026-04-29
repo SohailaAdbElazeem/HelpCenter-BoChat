@@ -220,7 +220,6 @@ import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSearch } from "../../Context/SearchContext";
 import Search from "../Search/Search";
-import { Link } from "react-router-dom";
 import plus from "../../assests/plus.svg";
 import close from "../../assests/x.svg";
 import "./FAQ.modules.CSS";
@@ -231,25 +230,25 @@ export default function FAQ() {
   const isLTR = i18n.language === "en";
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const questionsData = t("faqPage.questions", { returnObjects: true }) || [];
-
-  // Safety: if questionsData is not an array or empty, show nothing or a message
-  const isValid = Array.isArray(questionsData) && questionsData.length > 0;
-
   const toggleQuestion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
   const filteredQuestions = useMemo(() => {
-    if (!isValid) return [];
-    if (!searchTerm.trim()) return questionsData;
-    const searchLower = searchTerm.toLowerCase().trim();
-    return questionsData.filter(
-      (item) =>
-        item.q?.toLowerCase().includes(searchLower) ||
-        item.a?.toLowerCase().includes(searchLower)
-    );
-  }, [searchTerm, questionsData, isValid]);
+  const questionsData = t("faqPage.questions", { returnObjects: true }) || [];
+
+  if (!Array.isArray(questionsData) || questionsData.length === 0) return [];
+  if (!searchTerm.trim()) return questionsData;
+
+  const searchLower = searchTerm.toLowerCase().trim();
+
+  return questionsData.filter(
+    (item) =>
+      item.q?.toLowerCase().includes(searchLower) ||
+      item.a?.toLowerCase().includes(searchLower)
+  );
+}, [searchTerm, t]);
+  const isValid = filteredQuestions.length > 0;
 
   const highlightText = (text, searchTerm) => {
     if (!searchTerm || !searchTerm.trim() || !text) return text;

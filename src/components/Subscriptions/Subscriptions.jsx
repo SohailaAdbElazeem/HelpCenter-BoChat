@@ -302,17 +302,17 @@ const Subscriptions = () => {
   const navigate = useNavigate();
 
   // Get all static articles from i18n (re‑evaluates when language changes)
-  const allStaticArticles = t("staticArticles", { returnObjects: true }) || {};
-
+  
   // Filter only those with ctg = 6 (subscriptions)
   const articles = useMemo(() => {
+    const allStaticArticles = t("staticArticles", { returnObjects: true }) || {};
     return Object.values(allStaticArticles)
       .filter((article) => article.ctg === 6)
       .map((article) => ({
         ...article,
         _id: article._id,
       }));
-  }, [allStaticArticles]); // ✅ language dependency forces update
+  }, [t]); // ✅ language dependency forces update
 
   // Search filter
   const filteredArticles = useMemo(() => {
