@@ -282,7 +282,7 @@ const SpecialtiesAndSecurity = () => {
         ...article,
         _id: article._id,
       }));
-  }, [allStaticArticles, i18n.language]); // ✅ language dependency forces update
+  }, [allStaticArticles]); // ✅ language dependency forces update
 
   // Filter by search term
   const filteredArticles = useMemo(() => {

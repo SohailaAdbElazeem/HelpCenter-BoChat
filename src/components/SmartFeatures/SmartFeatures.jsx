@@ -313,7 +313,7 @@ const SmartFeatures = () => {
         ...article,
         _id: article._id,
       }));
-  }, [allStaticArticles, i18n.language]); //ependency forces update
+  }, [allStaticArticles]); //ependency forces update
 
   // Filter by search term
   const filteredArticles = useMemo(() => {

@@ -312,7 +312,7 @@ const Subscriptions = () => {
         ...article,
         _id: article._id,
       }));
-  }, [allStaticArticles, i18n.language]); // ✅ language dependency forces update
+  }, [allStaticArticles]); // ✅ language dependency forces update
 
   // Search filter
   const filteredArticles = useMemo(() => {

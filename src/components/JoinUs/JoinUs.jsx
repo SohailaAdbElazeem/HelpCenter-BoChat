@@ -252,29 +252,32 @@ export default function JoinUs() {
   const { searchTerm } = useSearch();
   const navigate = useNavigate();
 
-  // Static data (Arabic text)
-  const boxesData = [
-    {
-      imageUrl: hand,
-      header: "برنامج السفراء",
-      text: "انضم لبرنامج السفراء وكن جزءاً من نجاحنا",
-      path: "/Ambassadors",
-    },
-    {
-      imageUrl: Static,
-      header: "استثمر معنا",
-      text: "استثمر في مستقبل التكنولوجيا مع بو شات",
-      path: "/Invest",
-    },
-    {
-      imageUrl: edit,
-      header: "المطورون والمساهمون",
-      text: "ساهم في تطوير المنصة واكتب مستقبلها",
-      path: "/Developers",
-    },
-  ];
+  // ✅ FIX 1: wrap static data in useMemo
+  const boxesData = useMemo(
+    () => [
+      {
+        imageUrl: hand,
+        header: "برنامج السفراء",
+        text: "انضم لبرنامج السفراء وكن جزءاً من نجاحنا",
+        path: "/Ambassadors",
+      },
+      {
+        imageUrl: Static,
+        header: "استثمر معنا",
+        text: "استثمر في مستقبل التكنولوجيا مع بو شات",
+        path: "/Invest",
+      },
+      {
+        imageUrl: edit,
+        header: "المطورون والمساهمون",
+        text: "ساهم في تطوير المنصة واكتب مستقبلها",
+        path: "/Developers",
+      },
+    ],
+    []
+  );
 
-  // Filter boxes based on search term
+  // ✅ FIX 2: add boxesData to dependencies
   const filteredBoxes = useMemo(() => {
     if (!searchTerm.trim()) return boxesData;
 
@@ -284,7 +287,7 @@ export default function JoinUs() {
         box.header.toLowerCase().includes(searchLower) ||
         box.text.toLowerCase().includes(searchLower)
     );
-  }, [searchTerm]);
+  }, [searchTerm, boxesData]);
 
   // Highlight search term
   const highlightText = (text, searchTerm) => {
@@ -373,6 +376,7 @@ export default function JoinUs() {
                     }}
                   />
                 </div>
+
                 <h3
                   className="box-title"
                   style={{
@@ -385,6 +389,7 @@ export default function JoinUs() {
                 >
                   {highlightText(box.header, searchTerm)}
                 </h3>
+
                 <p
                   style={{
                     fontSize: "clamp(12px, 3vw, 14px)",
