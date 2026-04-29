@@ -875,7 +875,7 @@ export default function ArticleDetails() {
               fontWeight: 700,
               color: "#000",
               fontSize: "clamp(30px, 8vw, 50px)",
-              lineHeight: "clamp(25px, 5vw, 45px)",
+              lineHeight: "clamp(40px, 5vw, 50px)",
               margin: "40px 0",
               textAlign: isLTR ? "left" : "right",
             }}
