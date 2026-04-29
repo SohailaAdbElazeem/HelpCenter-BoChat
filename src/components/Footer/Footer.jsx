@@ -58,7 +58,9 @@ export default function Footer() {
 							</a>
 						</li>
 						<li>
-							<a href="/">{t("footer.findUs.xiaomi")}</a>
+							<a 
+							href="https://global.app.mi.com/details?lo=ID&la=en_US&id=com.pandaoracle.bochat"
+							 >{t("footer.findUs.xiaomi")}</a>
 						</li>
 					</ul>
 				</div>
