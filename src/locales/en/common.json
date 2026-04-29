@@ -75,9 +75,9 @@
   "footer": {
     "company": {
       "title": "Company",
-      "about": "About Us",
+      "about": "About the company",
       "contact": "Contact Us",
-      "info": "Information",
+      "info": "About Us",
       "help": "Help"
     },
     "findUs": {
@@ -392,6 +392,645 @@
       "descriptionTooShort": "Description is too short (minimum 10 characters)",
       "fileRequired": "File is required"
     }
-  }
+  },
+  "staticArticles": {
+    "static_security_1": {
+      "_id": "static_security_1",
+      "title": "How We Protect Your Personal Data",
+      "content": "We use the latest encryption technologies (AES-256) to protect all your personal data. Your data is not shared with any third party without your explicit consent. You can control your privacy settings from your dashboard at any time.",
+      "ctg": 1,
+      "viewsCount": 320,
+      "usefulCount": 98,
+      "unusefulCount": 6,
+      "createdAt": "2025-01-05T00:00:00Z",
+      "lastUpdate": "2025-02-10T00:00:00Z"
+    },
+    "static_security_2": {
+      "_id": "static_security_2",
+      "title": "Enable Two‑Factor Authentication (2FA)",
+      "content": "Two‑factor authentication adds an extra layer of security to your account. You can enable it from Settings > Security > Two‑Factor Authentication. You will need Google Authenticator or Authy to scan the QR code and enter the dynamic code when logging in.",
+      "ctg": 1,
+      "viewsCount": 275,
+      "usefulCount": 82,
+      "unusefulCount": 4,
+      "createdAt": "2025-01-12T00:00:00Z",
+      "lastUpdate": "2025-02-18T00:00:00Z"
+    },
+    "static_security_3": {
+      "_id": "static_security_3",
+      "title": "How to Create a Strong Password",
+      "content": "A strong password must contain at least 8 characters, including uppercase and lowercase letters, numbers, and special symbols. Do not use repeated passwords or personal information such as your birthdate. We recommend using a password manager like Bitwarden or LastPass.",
+      "ctg": 1,
+      "viewsCount": 410,
+      "usefulCount": 125,
+      "unusefulCount": 9,
+      "createdAt": "2025-01-20T00:00:00Z",
+      "lastUpdate": "2025-02-25T00:00:00Z"
+    },
+    "static_security_4": {
+      "_id": "static_security_4",
+      "title": "Privacy Policy and Updates",
+      "content": "We periodically update our privacy policy to ensure compliance with new laws. You will be notified by email 30 days before any material change. You can view the latest version of the policy via the 'Privacy Policy' link at the bottom of the page.",
+      "ctg": 1,
+      "viewsCount": 198,
+      "usefulCount": 54,
+      "unusefulCount": 3,
+      "createdAt": "2025-02-01T00:00:00Z",
+      "lastUpdate": "2025-03-01T00:00:00Z"
+    },
+    "static_security_5": {
+      "_id": "static_security_5",
+      "title": "Reporting a Security Vulnerability",
+      "content": "If you discover any security vulnerability in the system, please contact us immediately at security@bo-chat.space. We offer a Bug Bounty program for documented, non‑duplicate vulnerabilities.",
+      "ctg": 1,
+      "viewsCount": 112,
+      "usefulCount": 41,
+      "unusefulCount": 1,
+      "createdAt": "2025-02-10T00:00:00Z",
+      "lastUpdate": "2025-03-05T00:00:00Z"
+    },
+    "static_security_6": {
+      "_id": "static_security_6",
+      "title": "Protecting Your Account from Hacking",
+      "content": "Never share your verification code with anyone, even if they claim to be from support. Always check the sender’s email address. Enable alerts to receive instant notifications when a login occurs from a new device.",
+      "ctg": 1,
+      "viewsCount": 504,
+      "usefulCount": 167,
+      "unusefulCount": 12,
+      "createdAt": "2025-02-20T00:00:00Z",
+      "lastUpdate": "2025-03-10T00:00:00Z"
+    },
+    "static_quickstart_1": {
+      "_id": "static_quickstart_1",
+      "title": "Create a New Account – Step by Step",
+      "content": "To start using the app, download it from the official store. Tap 'Create Account', enter your email and phone number, then create a strong password. A confirmation email will be sent – click the link to activate your account.",
+      "ctg": 2,
+      "viewsCount": 530,
+      "usefulCount": 210,
+      "unusefulCount": 15,
+      "createdAt": "2025-01-05T00:00:00Z",
+      "lastUpdate": "2025-02-10T00:00:00Z"
+    },
+    "static_quickstart_2": {
+      "_id": "static_quickstart_2",
+      "title": "Login and Password Recovery",
+      "content": "To log in, open the app and enter your email and password. If you forget your password, tap 'Forgot password', enter your email, and a reset link will be sent. Choose a new strong password and do not share it with anyone.",
+      "ctg": 2,
+      "viewsCount": 420,
+      "usefulCount": 178,
+      "unusefulCount": 9,
+      "createdAt": "2025-01-10T00:00:00Z",
+      "lastUpdate": "2025-02-15T00:00:00Z"
+    },
+    "static_quickstart_3": {
+      "_id": "static_quickstart_3",
+      "title": "Add a Profile Picture and Edit Your Profile",
+      "content": "After logging in, go to 'Profile' from the side menu. Tap the camera icon to upload a profile picture. You can also edit your name, phone number, and email address. Don't forget to save your changes before exiting.",
+      "ctg": 2,
+      "viewsCount": 315,
+      "usefulCount": 102,
+      "unusefulCount": 6,
+      "createdAt": "2025-01-18T00:00:00Z",
+      "lastUpdate": "2025-02-22T00:00:00Z"
+    },
+    "static_quickstart_4": {
+      "_id": "static_quickstart_4",
+      "title": "Start a New Conversation – Quick Guide",
+      "content": "To start a new conversation, tap the + icon on the home screen. Choose a contact from your friends list or search by email address. Type your message and press send. You can also start a group conversation by adding multiple people.",
+      "ctg": 2,
+      "viewsCount": 680,
+      "usefulCount": 295,
+      "unusefulCount": 21,
+      "createdAt": "2025-01-25T00:00:00Z",
+      "lastUpdate": "2025-03-01T00:00:00Z"
+    },
+    "static_quickstart_5": {
+      "_id": "static_quickstart_5",
+      "title": "Send Files, Images, and Stickers",
+      "content": "During a conversation, tap the attachment icon (📎) to choose an image, video, document, or sticker. You can send multiple files at once. The maximum file size is 100 MB. All files are encrypted securely.",
+      "ctg": 2,
+      "viewsCount": 498,
+      "usefulCount": 187,
+      "unusefulCount": 14,
+      "createdAt": "2025-02-05T00:00:00Z",
+      "lastUpdate": "2025-03-06T00:00:00Z"
+    },
+    "static_quickstart_6": {
+      "_id": "static_quickstart_6",
+      "title": "Notification & Privacy Settings",
+      "content": "Go to Settings > Notifications to customise alerts per conversation. In privacy settings, you can control who sees you online, who can add you to groups, and whether your profile picture is visible to everyone or only friends.",
+      "ctg": 2,
+      "viewsCount": 385,
+      "usefulCount": 143,
+      "unusefulCount": 8,
+      "createdAt": "2025-02-12T00:00:00Z",
+      "lastUpdate": "2025-03-10T00:00:00Z"
+    },
+    "static_features_1": {
+      "_id": "static_features_1",
+      "title": "Smart Replies & Auto Suggestions",
+      "content": "Our app uses AI to suggest quick and smart replies based on the conversation context. Save time and tap the appropriate response. This feature is available in both Arabic and English.",
+      "ctg": 3,
+      "viewsCount": 430,
+      "usefulCount": 128,
+      "unusefulCount": 12,
+      "createdAt": "2025-01-08T00:00:00Z",
+      "lastUpdate": "2025-02-12T00:00:00Z"
+    },
+    "static_features_2": {
+      "_id": "static_features_2",
+      "title": "Advanced Voice Search",
+      "content": "Now you can use voice search to quickly find conversations and files. Just tap the microphone icon and speak your search term. The system recognises different dialects.",
+      "ctg": 3,
+      "viewsCount": 287,
+      "usefulCount": 92,
+      "unusefulCount": 5,
+      "createdAt": "2025-01-15T00:00:00Z",
+      "lastUpdate": "2025-02-20T00:00:00Z"
+    },
+    "static_features_3": {
+      "_id": "static_features_3",
+      "title": "Scheduled Messages & Smart Reminders",
+      "content": "Write your message now and set a time to send it later. Smart reminders alert you about important tasks and appointments based on your conversation content. You can manage all schedules from the dashboard.",
+      "ctg": 3,
+      "viewsCount": 514,
+      "usefulCount": 175,
+      "unusefulCount": 18,
+      "createdAt": "2025-01-22T00:00:00Z",
+      "lastUpdate": "2025-02-28T00:00:00Z"
+    },
+    "static_features_4": {
+      "_id": "static_features_4",
+      "title": "Instant Conversation Translation",
+      "content": "Translate messages to and from over 20 languages with one tap. Translation happens inside the app without opening an external browser. It supports text and images that contain text.",
+      "ctg": 3,
+      "viewsCount": 392,
+      "usefulCount": 110,
+      "unusefulCount": 9,
+      "createdAt": "2025-02-01T00:00:00Z",
+      "lastUpdate": "2025-03-05T00:00:00Z"
+    },
+    "static_features_5": {
+      "_id": "static_features_5",
+      "title": "Group Chat Sentiment Analysis",
+      "content": "An advanced feature that analyses the prevailing sentiment in group chats and shows you the percentage of positive, negative, and neutral messages. It helps you understand the team or community spirit.",
+      "ctg": 3,
+      "viewsCount": 209,
+      "usefulCount": 65,
+      "unusefulCount": 4,
+      "createdAt": "2025-02-10T00:00:00Z",
+      "lastUpdate": "2025-03-08T00:00:00Z"
+    },
+    "static_features_6": {
+      "_id": "static_features_6",
+      "title": "Third‑Party Integrations",
+      "content": "Connect your account to services like Trello, Google Drive, and Slack to better organise your work. You can send tasks and files directly from the app without leaving it.",
+      "ctg": 3,
+      "viewsCount": 178,
+      "usefulCount": 54,
+      "unusefulCount": 3,
+      "createdAt": "2025-02-18T00:00:00Z",
+      "lastUpdate": "2025-03-10T00:00:00Z"
+    },
+    "static_personalize_1": {
+      "_id": "static_personalize_1",
+      "title": "Change App Theme (Light/Dark Mode)",
+      "content": "You can easily switch between light and dark theme. Go to Settings > Appearance > choose system, light, or dark theme. Dark mode reduces eye strain in low light and saves battery life.",
+      "ctg": 4,
+      "viewsCount": 610,
+      "usefulCount": 245,
+      "unusefulCount": 18,
+      "createdAt": "2025-01-07T00:00:00Z",
+      "lastUpdate": "2025-02-12T00:00:00Z"
+    },
+    "static_personalize_2": {
+      "_id": "static_personalize_2",
+      "title": "Customise Conversation Fonts and Sizes",
+      "content": "In Settings > Customise Font, you can change the font type (Cairo, Tahoma, Arial) and font size from small to large. This makes reading easier for people with visual needs. You can also change the chat background colour.",
+      "ctg": 4,
+      "viewsCount": 384,
+      "usefulCount": 132,
+      "unusefulCount": 7,
+      "createdAt": "2025-01-14T00:00:00Z",
+      "lastUpdate": "2025-02-18T00:00:00Z"
+    },
+    "static_personalize_3": {
+      "_id": "static_personalize_3",
+      "title": "Manage Notifications per Conversation",
+      "content": "For each conversation, you can customise notifications: mute for an hour, a day, or permanently, change the notification sound, and show or hide message preview. Tap the conversation name then 'Notifications' to access settings.",
+      "ctg": 4,
+      "viewsCount": 520,
+      "usefulCount": 198,
+      "unusefulCount": 11,
+      "createdAt": "2025-01-20T00:00:00Z",
+      "lastUpdate": "2025-02-24T00:00:00Z"
+    },
+    "static_personalize_4": {
+      "_id": "static_personalize_4",
+      "title": "Pin Important Chats and Files",
+      "content": "To pin a chat to the top of the list, swipe left on the chat (or long‑press it) and choose 'Pin'. You can pin up to 5 chats. You can also pin specific messages or files inside a conversation for quick access.",
+      "ctg": 4,
+      "viewsCount": 456,
+      "usefulCount": 167,
+      "unusefulCount": 9,
+      "createdAt": "2025-01-27T00:00:00Z",
+      "lastUpdate": "2025-03-02T00:00:00Z"
+    },
+    "static_personalize_5": {
+      "_id": "static_personalize_5",
+      "title": "Create Custom Conversation Tags",
+      "content": "Organise your conversations into custom tags like 'Work', 'Family', 'Friends'. Go to Settings > Manage Tags, create a new tag, then add conversations to it. You can also colour‑code each tag for easy identification.",
+      "ctg": 4,
+      "viewsCount": 293,
+      "usefulCount": 89,
+      "unusefulCount": 4,
+      "createdAt": "2025-02-03T00:00:00Z",
+      "lastUpdate": "2025-03-07T00:00:00Z"
+    },
+    "static_personalize_6": {
+      "_id": "static_personalize_6",
+      "title": "Customise Sidebar and Shortcuts",
+      "content": "You can rearrange sidebar icons according to your usage. Tap 'Edit Menu' and drag icons to reorder them, or hide ones you don't use. You can also add shortcuts for frequent conversations.",
+      "ctg": 4,
+      "viewsCount": 329,
+      "usefulCount": 112,
+      "unusefulCount": 5,
+      "createdAt": "2025-02-10T00:00:00Z",
+      "lastUpdate": "2025-03-10T00:00:00Z"
+    },
+    "static_account_1": {
+      "_id": "static_account_1",
+      "title": "Update Email and Password",
+      "content": "To update your email, go to Settings > Account > Email. A confirmation message will be sent to the new email. To change your password, enter your current password, then the new one with confirmation. We recommend using a strong password containing letters, numbers and symbols.",
+      "ctg": 5,
+      "viewsCount": 680,
+      "usefulCount": 210,
+      "unusefulCount": 15,
+      "createdAt": "2025-01-05T00:00:00Z",
+      "lastUpdate": "2025-02-10T00:00:00Z"
+    },
+    "static_account_2": {
+      "_id": "static_account_2",
+      "title": "Privacy Settings – Who Sees My Information?",
+      "content": "You can control the privacy of your account from Settings > Privacy. Choose who can see your profile picture, activity status, and friend list. Options: everyone, friends only, or no one. You can also hide your account from search engines.",
+      "ctg": 5,
+      "viewsCount": 540,
+      "usefulCount": 162,
+      "unusefulCount": 9,
+      "createdAt": "2025-01-12T00:00:00Z",
+      "lastUpdate": "2025-02-18T00:00:00Z"
+    },
+    "static_account_3": {
+      "_id": "static_account_3",
+      "title": "Permanently Delete Account",
+      "content": "If you wish to permanently delete your account, go to Settings > Account > Delete Account. You will be asked to confirm your password. Warning: all your data will be permanently deleted and cannot be recovered. You have a 30‑day grace period to cancel the deletion by logging in again.",
+      "ctg": 5,
+      "viewsCount": 390,
+      "usefulCount": 88,
+      "unusefulCount": 12,
+      "createdAt": "2025-01-20T00:00:00Z",
+      "lastUpdate": "2025-02-25T00:00:00Z"
+    },
+    "static_account_4": {
+      "_id": "static_account_4",
+      "title": "Enable Security Alerts",
+      "content": "Enable security alerts to receive an immediate notification when a login occurs from a new device or when your password is changed. You can activate them from Settings > Security > Login Alerts. We also recommend enabling two‑factor authentication for extra protection.",
+      "ctg": 5,
+      "viewsCount": 620,
+      "usefulCount": 195,
+      "unusefulCount": 11,
+      "createdAt": "2025-02-01T00:00:00Z",
+      "lastUpdate": "2025-03-03T00:00:00Z"
+    },
+    "static_account_5": {
+      "_id": "static_account_5",
+      "title": "Manage Active Sessions",
+      "content": "From Settings > Active Sessions, you can see all devices connected to your account. You can remotely log out of any untrusted device. Tap 'Log out of all devices' to end all current sessions.",
+      "ctg": 5,
+      "viewsCount": 470,
+      "usefulCount": 120,
+      "unusefulCount": 6,
+      "createdAt": "2025-02-10T00:00:00Z",
+      "lastUpdate": "2025-03-08T00:00:00Z"
+    },
+    "static_account_6": {
+      "_id": "static_account_6",
+      "title": "Link Account with Social Media",
+      "content": "You can link your Bo Chat account with Facebook, Google, or Apple to simplify login. Go to Settings > Link Accounts, choose the service and follow the instructions. You can unlink at any time from the same page.",
+      "ctg": 5,
+      "viewsCount": 510,
+      "usefulCount": 143,
+      "unusefulCount": 8,
+      "createdAt": "2025-02-18T00:00:00Z",
+      "lastUpdate": "2025-03-10T00:00:00Z"
+    },
+    "static_1": {
+      "_id": "static_1",
+      "title": "Monthly Subscription Packages",
+      "content": "We offer a variety of monthly packages to suit your needs. The basic package provides essential features, while the premium package includes extra features like cloud storage and instant support. You can subscribe by tapping the subscribe button in the app and choosing the package that suits you. Prices start at $5 per month.",
+      "ctg": 6,
+      "viewsCount": 150,
+      "usefulCount": 45,
+      "unusefulCount": 5,
+      "createdAt": "2025-01-01T00:00:00Z",
+      "lastUpdate": "2025-02-15T00:00:00Z"
+    },
+    "static_2": {
+      "_id": "static_2",
+      "title": "How to Cancel Auto‑Renewal",
+      "content": "To cancel auto‑renewal, go to Settings > My Subscriptions > choose the package > tap Cancel Subscription. Automatic renewal will be turned off at the end of the current period. No additional fees will be charged. If you encounter any problem, contact support via email or live chat.",
+      "ctg": 6,
+      "viewsCount": 98,
+      "usefulCount": 30,
+      "unusefulCount": 2,
+      "createdAt": "2025-01-10T00:00:00Z",
+      "lastUpdate": "2025-02-20T00:00:00Z"
+    },
+    "static_3": {
+      "_id": "static_3",
+      "title": "How to Get a Tax Invoice",
+      "content": "After completing the payment, you can request an official tax invoice. Go to the Orders page inside your account, select the transaction, then click 'Request Invoice'. The invoice will be sent to your email within 24 hours. Make sure your tax data is correctly entered in the settings.",
+      "ctg": 6,
+      "viewsCount": 75,
+      "usefulCount": 22,
+      "unusefulCount": 1,
+      "createdAt": "2025-01-20T00:00:00Z",
+      "lastUpdate": "2025-02-25T00:00:00Z"
+    },
+    "static_4": {
+      "_id": "static_4",
+      "title": "Annual Subscription Plan (20% Discount)",
+      "content": "Subscribe now to the annual plan and enjoy a 20% discount compared to monthly payments. You will also receive extra perks such as priority technical support and advanced reports. The annual plan costs $48 instead of $60. The plan auto‑renews each year but you can cancel renewal at any time.",
+      "ctg": 6,
+      "viewsCount": 210,
+      "usefulCount": 70,
+      "unusefulCount": 8,
+      "createdAt": "2025-02-01T00:00:00Z",
+      "lastUpdate": "2025-03-01T00:00:00Z"
+    },
+    "static_5": {
+      "_id": "static_5",
+      "title": "Available Payment Methods (Cards, Wallets)",
+      "content": "We support many payment methods for your convenience: credit cards (Visa, Mastercard), PayPal, Vodafone Cash, Orange Money, bank transfers. All payments are encrypted and secure. Choose your preferred method when completing the subscription.",
+      "ctg": 6,
+      "viewsCount": 134,
+      "usefulCount": 50,
+      "unusefulCount": 3,
+      "createdAt": "2025-02-10T00:00:00Z",
+      "lastUpdate": "2025-02-28T00:00:00Z"
+    },
+    "static_6": {
+      "_id": "static_6",
+      "title": "Subscription Renewal Problem? Solutions",
+      "content": "If you experience a problem renewing your subscription: first make sure you have sufficient balance. Second, your card may have expired. Third, there could be a temporary technical glitch. Try logging out and back in, or remove and re‑add your card. If the problem persists, contact support with a screenshot of the error.",
+      "ctg": 6,
+      "viewsCount": 88,
+      "usefulCount": 33,
+      "unusefulCount": 4,
+      "createdAt": "2025-02-18T00:00:00Z",
+      "lastUpdate": "2025-03-05T00:00:00Z"
+    },
+    "static_7": {
+      "_id": "static_7",
+      "title": "FAQs about Payments and Subscriptions",
+      "content": "A quick guide to answer the most common questions: How do I change my payment method? What should I do if the amount is deducted but the subscription is not activated? You can contact support at support@bo-chat.space and we will reply within 24 hours.",
+      "ctg": 6,
+      "viewsCount": 60,
+      "usefulCount": 20,
+      "unusefulCount": 2,
+      "createdAt": "2025-03-01T00:00:00Z",
+      "lastUpdate": "2025-03-10T00:00:00Z"
+    },
+    "static_ambassador_1": {
+      "_id": "static_ambassador_1",
+      "title": "What is the Bo Chat Ambassador Program?",
+      "content": "The Bo Chat Ambassador Program is an initiative to build a network of influencers and distinguished users who contribute to spreading the app’s culture and increasing awareness. Ambassadors receive exclusive rewards and ongoing support from the Bo Chat team.",
+      "ctg": 7,
+      "viewsCount": 520,
+      "usefulCount": 110,
+      "unusefulCount": 6,
+      "createdAt": "2025-01-05T00:00:00Z",
+      "lastUpdate": "2025-02-10T00:00:00Z"
+    },
+    "static_ambassador_2": {
+      "_id": "static_ambassador_2",
+      "title": "Requirements to Join the Ambassador Program",
+      "content": "To become an ambassador, you must have an active account for at least 3 months. It is preferred that you have a social media following (500+ followers), be enthusiastic about trying new features and publishing positive content about the app. Finally, pass a simple interview with the program team.",
+      "ctg": 7,
+      "viewsCount": 390,
+      "usefulCount": 75,
+      "unusefulCount": 4,
+      "createdAt": "2025-01-12T00:00:00Z",
+      "lastUpdate": "2025-02-18T00:00:00Z"
+    },
+    "static_ambassador_3": {
+      "_id": "static_ambassador_3",
+      "title": "Ambassador Benefits and Rewards",
+      "content": "Ambassadors receive: a free annual subscription to the premium plan, exclusive entry to Bo Chat events, 30% discount on the company store, a special discount code for followers, and monthly cash prizes up to $500 depending on performance.",
+      "ctg": 7,
+      "viewsCount": 610,
+      "usefulCount": 185,
+      "unusefulCount": 12,
+      "createdAt": "2025-01-20T00:00:00Z",
+      "lastUpdate": "2025-02-25T00:00:00Z"
+    },
+    "static_ambassador_4": {
+      "_id": "static_ambassador_4",
+      "title": "Ambassador Duties and Responsibilities",
+      "content": "Ambassador responsibilities include: creating creative content about the app at least once a week, answering new users’ questions, participating in beta testing of new features, attending monthly meetings with the program team, and submitting a monthly performance report.",
+      "ctg": 7,
+      "viewsCount": 480,
+      "usefulCount": 95,
+      "unusefulCount": 7,
+      "createdAt": "2025-02-01T00:00:00Z",
+      "lastUpdate": "2025-03-03T00:00:00Z"
+    },
+    "static_ambassador_5": {
+      "_id": "static_ambassador_5",
+      "title": "How to Apply to Join?",
+      "content": "To apply, fill out the form at the 'Become an Ambassador' link inside the app or send an email to ambassadors@bo-chat.space with your name, email address, social media links, and why you want to join. Our team will get back to you within 5 working days.",
+      "ctg": 7,
+      "viewsCount": 530,
+      "usefulCount": 120,
+      "unusefulCount": 8,
+      "createdAt": "2025-02-10T00:00:00Z",
+      "lastUpdate": "2025-03-08T00:00:00Z"
+    },
+    "static_ambassador_6": {
+      "_id": "static_ambassador_6",
+      "title": "Experiences of Former Ambassadors",
+      "content": "Ahmed, a former ambassador, says: 'It was a wonderful experience. I met an inspiring team and received generous rewards. I helped the community grow and increased my marketing skills.' We invite you to read the full success stories on our blog.",
+      "ctg": 7,
+      "viewsCount": 350,
+      "usefulCount": 70,
+      "unusefulCount": 3,
+      "createdAt": "2025-02-18T00:00:00Z",
+      "lastUpdate": "2025-03-10T00:00:00Z"
+    },
+    "static_invest_1": {
+      "_id": "static_invest_1",
+      "title": "Available Investment Opportunities on the Platform",
+      "content": "We offer several investment opportunities suitable for different capital sizes: preferred shares, convertible bonds, and monthly profit shares. You can view the detailed project prospectus by requesting the presentation.",
+      "ctg": 8,
+      "viewsCount": 430,
+      "usefulCount": 87,
+      "unusefulCount": 5,
+      "createdAt": "2025-01-10T00:00:00Z",
+      "lastUpdate": "2025-02-15T00:00:00Z"
+    },
+    "static_invest_2": {
+      "_id": "static_invest_2",
+      "title": "Investment Terms and Conditions",
+      "content": "The minimum investment is $5,000. Investment is open to individuals and legal entities. The maturity period starts from one year with the possibility of reinvestment. Profits are distributed quarterly. We require identity and address verification documents.",
+      "ctg": 8,
+      "viewsCount": 287,
+      "usefulCount": 52,
+      "unusefulCount": 3,
+      "createdAt": "2025-01-18T00:00:00Z",
+      "lastUpdate": "2025-02-20T00:00:00Z"
+    },
+    "static_invest_3": {
+      "_id": "static_invest_3",
+      "title": "Investment Returns and Financial Forecasts",
+      "content": "The expected annual return ranges between 12% and 18% depending on the type of investment. We achieved 15% growth in the last quarter. We have an expansion plan in 3 new countries during 2026, which will further boost future returns.",
+      "ctg": 8,
+      "viewsCount": 512,
+      "usefulCount": 103,
+      "unusefulCount": 9,
+      "createdAt": "2025-01-25T00:00:00Z",
+      "lastUpdate": "2025-02-28T00:00:00Z"
+    },
+    "static_invest_4": {
+      "_id": "static_invest_4",
+      "title": "How to Become a Strategic Partner?",
+      "content": "For investors wishing to inject amounts over $100,000, they can apply for a strategic partnership. The strategic partner gets a seat on the advisory board, partial withdrawal rights, and priority in future funding rounds.",
+      "ctg": 8,
+      "viewsCount": 198,
+      "usefulCount": 37,
+      "unusefulCount": 2,
+      "createdAt": "2025-02-05T00:00:00Z",
+      "lastUpdate": "2025-03-05T00:00:00Z"
+    },
+    "static_invest_5": {
+      "_id": "static_invest_5",
+      "title": "Investment Guarantees and Legal Framework",
+      "content": "All investments are protected by legal contracts approved by the Capital Market Authority. We have a guarantee fund to protect capital up to 80% of the investment value. Accounts are audited annually by an international auditing firm.",
+      "ctg": 8,
+      "viewsCount": 324,
+      "usefulCount": 68,
+      "unusefulCount": 4,
+      "createdAt": "2025-02-12T00:00:00Z",
+      "lastUpdate": "2025-03-08T00:00:00Z"
+    },
+    "static_invest_6": {
+      "_id": "static_invest_6",
+      "title": "Contact the Investment Team",
+      "content": "You can contact the investment team via email invest@bo-chat.space or by phone +966 12 345 6789. We welcome your questions and enquiries, and we will respond within 24 business hours.",
+      "ctg": 8,
+      "viewsCount": 276,
+      "usefulCount": 43,
+      "unusefulCount": 1,
+      "createdAt": "2025-02-20T00:00:00Z",
+      "lastUpdate": "2025-03-10T00:00:00Z"
+    },
+    "static_developers_1": {
+      "_id": "static_developers_1",
+      "title": "Quick Start Guide for Developers",
+      "content": "Welcome! You can start by reviewing the source code on GitHub. Fork the project, then clone it locally. Make sure Node.js v18+ and npm are installed. Run `npm install` then `npm start` to launch the development environment.",
+      "ctg": 9,
+      "viewsCount": 520,
+      "usefulCount": 110,
+      "unusefulCount": 8,
+      "createdAt": "2025-01-10T00:00:00Z",
+      "lastUpdate": "2025-02-15T00:00:00Z"
+    },
+    "static_developers_2": {
+      "_id": "static_developers_2",
+      "title": "Source Code and Technical Architecture",
+      "content": "The project is built with React.js for the front end, Node.js + Express for the server, and MongoDB database. The API follows RESTful style. All components are documented in the `/docs` folder. You can view the database schema in the `schema.sql` file.",
+      "ctg": 9,
+      "viewsCount": 380,
+      "usefulCount": 72,
+      "unusefulCount": 4,
+      "createdAt": "2025-01-18T00:00:00Z",
+      "lastUpdate": "2025-02-20T00:00:00Z"
+    },
+    "static_developers_3": {
+      "_id": "static_developers_3",
+      "title": "How to Contribute (Pull Request)",
+      "content": "Thank you for your interest in contributing! Create a new branch from `main`, add your changes with appropriate tests, then submit a Pull Request (PR). Commit messages must follow the Conventional Commits pattern. The core team will review your request within 3 business days.",
+      "ctg": 9,
+      "viewsCount": 460,
+      "usefulCount": 95,
+      "unusefulCount": 6,
+      "createdAt": "2025-01-25T00:00:00Z",
+      "lastUpdate": "2025-02-28T00:00:00Z"
+    },
+    "static_developers_4": {
+      "_id": "static_developers_4",
+      "title": "Coding Standards and Style Guides",
+      "content": "We follow the Airbnb style guide for JavaScript and React. Use ESLint and Prettier to auto‑format your code. Variable names should be clear and in English. Document any public function using JSDoc.",
+      "ctg": 9,
+      "viewsCount": 310,
+      "usefulCount": 54,
+      "unusefulCount": 2,
+      "createdAt": "2025-02-05T00:00:00Z",
+      "lastUpdate": "2025-03-05T00:00:00Z"
+    },
+    "static_developers_5": {
+      "_id": "static_developers_5",
+      "title": "Testing Environment and Running Tests",
+      "content": "To run tests, use `npm test`. We use Jest and React Testing Library. Any new feature must have at least 80% test coverage. You can also test the API using the Postman collection located in the `/postman` folder.",
+      "ctg": 9,
+      "viewsCount": 295,
+      "usefulCount": 48,
+      "unusefulCount": 3,
+      "createdAt": "2025-02-12T00:00:00Z",
+      "lastUpdate": "2025-03-08T00:00:00Z"
+    },
+    "static_developers_6": {
+      "_id": "static_developers_6",
+      "title": "Good First Issues (Task List)",
+      "content": "If you are looking for your first contribution, check out the 'good first issue' list on GitHub Issues. Currently, we need help improving documentation, fixing some dark mode glitches, and adding Turkish language support. Contact us at dev@bo-chat.space for any queries.",
+      "ctg": 9,
+      "viewsCount": 410,
+      "usefulCount": 88,
+      "unusefulCount": 5,
+      "createdAt": "2025-02-20T00:00:00Z",
+      "lastUpdate": "2025-03-10T00:00:00Z"
+    }
+  },
+  "faqPage": {
+  "title": "Frequently Asked Questions",
+  "noResults": "No results match your search for \"{{searchTerm}}\"",
+  "questions": [
+    {
+      "q": "How can I create a new account?",
+      "a": "You can create a new account by opening the app, tapping 'Create Account', entering your email and phone number, then creating a strong password. A confirmation email will be sent to your email address to activate the account."
+    },
+    {
+      "q": "How can I recover my account if I forget my password?",
+      "a": "Tap 'Forgot password' on the login screen, enter your email, and a reset link will be sent. Follow the instructions to create a new password."
+    },
+    {
+      "q": "Is my data protected and secure?",
+      "a": "Yes, we use the latest encryption technologies (AES-256) to protect all your personal data. Your data is not shared with any third party without your explicit consent."
+    },
+    {
+      "q": "How do I cancel auto-renewal?",
+      "a": "Go to Settings > My Subscriptions > choose your plan > tap Cancel Subscription. Auto-renewal will be turned off at the end of the current period."
+    },
+    {
+      "q": "Can I use the app for free?",
+      "a": "Yes, the app offers free basic features. There are also paid subscription plans for extra features like cloud storage and instant support."
+    },
+    {
+      "q": "How can I report a technical issue?",
+      "a": "You can contact support via email at support@bo-chat.space or through the 'Submit a request' form inside the app."
+    }
+  ]
+}
+
+
 
 }
