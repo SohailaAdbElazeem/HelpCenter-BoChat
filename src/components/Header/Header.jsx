@@ -12,8 +12,7 @@ export default function Header() {
 		localStorage.setItem("lang", newLang);
 		document.body.dir = newLang === "ar" ? "rtl" : "ltr";
 	};
-
-	return (
+ 	return (
 		<div className="main-section">
 			<div className="header">
 				<div className="logo-container">
@@ -29,6 +28,7 @@ export default function Header() {
 				<button className="translate" onClick={toggleLanguage}>
 					{i18n.language === "ar" ? "English" : "عربي"}
 				</button>
+
 			</div>
 		</div>
 	);

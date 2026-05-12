@@ -14,23 +14,23 @@ import brain from "../../assests/hands-brain 1.svg";
 import { useTranslation } from "react-i18next";
 import { useSearch } from "../../Context/SearchContext";
  
-// const boxesData = [
-//   { key: "security", ctg: 1, path: "/category/1", imageSrc: userLock},
-//   { key: "quickstart", ctg: 2, path: "/category/2", imageSrc: SendClock },
-//   { key: "features", ctg: 3, path: "/category/3", imageSrc: feature},
-//   { key: "personalize", ctg: 4, path: "/category/4", imageSrc: uxbrowser},
-//   { key: "settings", ctg: 5, path: "/category/5",imageSrc: setting},
-//   { key: "subscriptions", ctg: 6, path: "/category/6",imageSrc: creadit },
-//  ];
-
 const boxesData = [
-  { key: "security", ctg: 1, path: "/specialtiesAndSecurity", imageSrc: userLock },
-  { key: "quickstart", ctg: 2, path: "/quickstart", imageSrc: SendClock },
-  { key: "features", ctg: 3, path: "/smartFeatures", imageSrc: feature },
-  { key: "personalize", ctg: 4, path: "/personalizeExp", imageSrc: uxbrowser },
-  { key: "settings", ctg: 5, path: "/accountSettings", imageSrc: setting },
-  { key: "subscriptions", ctg: 6, path: "/subscriptions", imageSrc: creadit },
-];
+  { key: "security", ctg: 1, path: "/category/1", imageSrc: userLock},
+  { key: "quickstart", ctg: 2, path: "/category/2", imageSrc: SendClock },
+  { key: "features", ctg: 3, path: "/category/3", imageSrc: feature},
+  { key: "personalize", ctg: 4, path: "/category/4", imageSrc: uxbrowser},
+  { key: "settings", ctg: 5, path: "/category/5",imageSrc: setting},
+  { key: "subscriptions", ctg: 6, path: "/category/6",imageSrc: creadit },
+ ];
+
+// const boxesData = [
+//   { key: "security", ctg: 1, path: "/specialtiesAndSecurity", imageSrc: userLock },
+//   { key: "quickstart", ctg: 2, path: "/quickstart", imageSrc: SendClock },
+//   { key: "features", ctg: 3, path: "/smartFeatures", imageSrc: feature },
+//   { key: "personalize", ctg: 4, path: "/personalizeExp", imageSrc: uxbrowser },
+//   { key: "settings", ctg: 5, path: "/accountSettings", imageSrc: setting },
+//   { key: "subscriptions", ctg: 6, path: "/subscriptions", imageSrc: creadit },
+// ];
 export default function Home() {
 	const { t, i18n } = useTranslation();
 	const [activeIndex, setActiveIndex] = useState(null);

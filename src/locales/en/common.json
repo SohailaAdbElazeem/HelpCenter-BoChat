@@ -103,31 +103,7 @@
   "search": {
     "placeholder": "what you want to search for"
   },
- "accountSettings": {
-    "title": "Account Settings",
-    "items": [
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account",
-      "Manage Your Account"
-    ],
-    "searchResults": "Search results for",
-    "result": "result",
-    "results": "results",
-    "noResults": "No settings match your search"
-  },
+  
     "faq": {
     "title": "Frequently Asked Questions",
      "question": "question",
@@ -188,182 +164,21 @@
   },
 
   
-  "personalizeExp": {
-    "title": "Personalize Experience",
-    "manageAccount": "Manage your account",
-    "privacySettings": "Privacy Settings",
-    "notificationPrefs": "Notification Preferences",
-    "languageSettings": "Language Settings",
-    "themeCustomization": "Theme Customization",
-    "dataManagement": "Data Management",
-    "securitySettings": "Security Settings",
-    "connectedDevices": "Connected Devices",
-    "twoFactorAuth": "Two-Factor Authentication",
-    "sessionManagement": "Session Management",
-    "backupSettings": "Backup Settings",
-    "storageManagement": "Storage Management",
-    "accessibility": "Accessibility",
-    "familySharing": "Family Sharing",
-    "paymentMethods": "Payment Methods",
-    "subscriptionPlan": "Subscription Plan",
-     "searchResults": "Search results for",
-    "result": "option",
-    "results": "options",
-    "noResults": "No options match your search for \"{{searchTerm}}\""
-  },
-  "quickstart": {
-    "title": "Quick Start",
-    "gettingStarted": "Getting Started",
-    "accountSetup": "Account Setup",
-    "navigation": "App Navigation",
-    "features": "Key Features",
-    "settings": "Settings",
-    "profileSetup": "Profile Setup",
-    "messaging": "Messaging",
-    "notifications": "Notifications",
-    "privacyBasics": "Privacy Basics",
-    "securityTips": "Security Tips",
-    "dataSync": "Data Sync",
-    "backupRestore": "Backup & Restore",
-    "troubleshooting": "Troubleshooting",
-    "faq": "FAQ",
-    "support": "Support",
-    "feedback": "Send Feedback",
-    "searchResults": "Search results for",
-    "result": "guide",
-    "results": "guides",
-    "noResults": "No guides match your search for \"{{searchTerm}}\""
-  },
-  "smartFeatures": {
-    "title": "Smart Features",
-    "aiAssistant": "AI Assistant",
-    "smartReplies": "Smart Replies",
-    "voiceCommands": "Voice Commands",
-    "autoTranslate": "Auto Translate",
-    "smartSearch": "Smart Search",
-    "predictiveText": "Predictive Text",
-    "faceRecognition": "Face Recognition",
-    "smartNotifications": "Smart Notifications",
-    "autoOrganize": "Auto Organize",
-    "smartFilters": "Smart Filters",
-    "voiceToText": "Voice to Text",
-    "smartSuggestions": "Smart Suggestions",
-    "autoBackup": "Auto Backup",
-    "smartSorting": "Smart Sorting",
-    "intentDetection": "Intent Detection",
-    "contextAware": "Context Aware",
-    "searchResults": "Search results for",
-    "result": "feature",
-    "results": "features",
-    "noResults": "No smart features match your search for \"{{searchTerm}}\""
-  },
-  "security": {
-    "title": "Privacy & Security",
-    "dataEncryption": "Data Encryption",
-    "twoFactorAuth": "Two-Factor Authentication",
-    "privacySettings": "Privacy Settings",
-    "dataBackup": "Data Backup",
-    "secureLogin": "Secure Login",
-    "accountRecovery": "Account Recovery",
-    "sessionManagement": "Session Management",
-    "deviceManagement": "Device Management",
-    "dataDeletion": "Data Deletion",
-    "securityAlerts": "Security Alerts",
-    "biometricAuth": "Biometric Authentication",
-    "secureSharing": "Secure Sharing",
-    "privateMode": "Private Mode",
-    "dataPermissions": "Data Permissions",
-    "securityAudit": "Security Audit",
-    "vpnProtection": "VPN Protection",
-    "searchResults": "نتائج البحث عن",
-    "result": "خيار أمان",
-    "results": "خيارات أمان",
-    "noResults": "لا توجد خيارات أمان مطابقة لبحثك عن \"{{searchTerm}}\""
-  },
-  "subscriptions": {
-    "title": "Payments & Subscriptions",
-    "subscriptionPlans": "Subscription Plans",
-    "paymentMethods": "Payment Methods",
-    "billingHistory": "Billing History",
-    "autoRenewal": "Auto-Renewal Settings",
-    "cancelSubscription": "Cancel Subscription",
-    "changePlan": "Change Plan",
-    "paymentFailed": "Payment Failed",
-    "refundPolicy": "Refund Policy",
-    "invoiceDownload": "Download Invoice",
-    "taxInformation": "Tax Information",
-    "promoCodes": "Promo Codes",
-    "discountOffers": "Discount Offers",
-    "paymentSecurity": "Payment Security",
-    "currencySettings": "Currency Settings",
-    "subscriptionBenefits": "Subscription Benefits",
-    "customerSupport": "Customer Support",
-     "searchResults": "Search results for",
-    "result": "option",
-    "results": "options",
-    "noResults": "No subscription options match your search for \"{{searchTerm}}\""
-  },
-   "Ambassadors": {
-    "title": "Ambassadors programme",
-    "gettingStarted": "Getting Started",
-    "accountSetup": "Account Setup",
-    "navigation": "Account Setup",
-    "features": "Account Setup",
-    "settings": "Account Setup",
-    "profileSetup": "Account Setup",
-    "messaging":"Account Setup",
-    "notifications": "Account Setup",
-    "privacyBasics": "Account Setup",
-    "securityTips": "Account Setup",
-    "dataSync": "Account Setup",
-    "backupRestore": "Account Setup",
-    "troubleshooting":"Account Setup",
-    "faq":"Account Setup",
-    "support":"Account Setup" ,
-    "feedback":"Account Setup" 
-  },
+ 
  "ambassadors": {
     "searchResults": "نتائج البحث عن",
     "result": "سفير",
     "results": "سفراء",
     "noResults": "لا توجد نتائج مطابقة لبحثك عن \"{{searchTerm}}\""
   },
-    "Invest": {
-    "title": "Investment Opportunities",
-    "option1": "Technology Investment",
-    "option2": "Real Estate Investment",
-    "option3": "Stocks and Bonds",
-    "option4": "Startup Investment",
-    "option5": "Gold and Precious Metals",
-    "option6": "Cryptocurrency",
-    "option7": "Investment Funds",
-    "option8": "Agricultural Investment"
-  },
+   
   "invest": {
     "searchResults": "Search results for",
     "result": "investment opportunity",
     "results": "investment opportunities",
     "noResults": "No investment opportunities match your search for \"{{searchTerm}}\""
   },
-    "Developers": {
-    "title": " Developers and contributors",
-    "gettingStarted": "Getting Started",
-    "accountSetup": "Account Setup",
-    "navigation": "Account Setup",
-    "features": "Account Setup",
-    "settings": "Account Setup",
-    "profileSetup": "Account Setup",
-    "messaging":"Account Setup",
-    "notifications": "Account Setup",
-    "privacyBasics": "Account Setup",
-    "securityTips": "Account Setup",
-    "dataSync": "Account Setup",
-    "backupRestore": "Account Setup",
-    "troubleshooting":"Account Setup",
-    "faq":"Account Setup",
-    "support":"Account Setup" ,
-    "feedback":"Account Setup" 
-  },
+  
    "developers": {
     "searchResults": "Search results for",
     "result": "developer",
@@ -405,6 +220,17 @@
   "createdAt": "2025-01-05T00:00:00Z",
   "lastUpdate": "2025-02-10T00:00:00Z"
 },
+  "categories": {
+    "privacy": "Privacy & Security",
+    "quickStart": "Quick Start",
+    "smartFeatures": "Smart Features",
+    "customization": "Customization",
+    "accountSettings": "Account & Settings",
+    "payments": "Payments & Subscriptions",
+    "ambassadors": "Ambassador Program",
+    "invest": "Invest With Us",
+    "developers": "Developers & Contributors"
+  },
 "static_security_2": {
   "_id": "static_security_2",
   "title": "Enable Two‑Factor Authentication (2FA) – Complete Guide",
@@ -730,30 +556,79 @@
   "noResults": "No results match your search for \"{{searchTerm}}\"",
   "questions": [
     {
-      "q": "How can I create a new account?",
-      "a": "You can create a new account by opening the app, tapping 'Create Account', entering your email and phone number, then creating a strong password. A confirmation email will be sent to your email address to activate the account."
+      "q": "Why was BO CHAT created?",
+      "a": "BOCHAT was created to provide a modern and fast communication experience that combines simplicity and intelligence in one place, focusing on making conversations more meaningful and effective in today’s fast-paced digital world.\n\nThe platform was developed in response to the need for a messaging application that offers instant and secure communication, while giving users a space for free expression within a structured and transparent environment, without complexity or distraction.\n\nBOCHAT aims to redefine digital messaging by providing smart tools that support natural communication, improve user experience, and maintain privacy, high performance, and ease of use for everyone."
     },
     {
-      "q": "How can I recover my account if I forget my password?",
-      "a": "Tap 'Forgot password' on the login screen, enter your email, and a reset link will be sent. Follow the instructions to create a new password."
+      "q": "Does BO CHAT impose any content moderation or censorship?",
+      "a": "BOCHAT does not enforce moderation based on users' opinions or viewpoints. Content is only restricted, removed, or modified when it violates BOCHAT Community Guidelines or applicable laws.\n\nProhibited behaviors include, but are not limited to, illegal activities, hate speech, harassment, bullying, sexually explicit content that violates guidelines, unauthorized copyrighted material, and any harmful behavior.\n\nEnforcement policies are applied fairly and transparently to ensure a safe and responsible environment for all users."
     },
     {
-      "q": "Is my data protected and secure?",
-      "a": "Yes, we use the latest encryption technologies (AES-256) to protect all your personal data. Your data is not shared with any third party without your explicit consent."
+      "q": "Will BO CHAT apply hidden bans or shadow restrictions on my content?",
+      "a": "No, BOCHAT does not apply hidden bans or undisclosed content suppression.\n\nThe platform is built on full transparency, and users are informed whenever any action is taken on their content, such as removal or restriction, along with the reason based on community guidelines.\n\nContent is not hidden or reduced based on opinion or viewpoint. Actions are only taken against content that violates rules or laws, such as illegal content, hate speech, harassment, or anything that threatens user or community safety.\n\nBOCHAT also provides clear appeal mechanisms to ensure fairness and transparency."
     },
     {
-      "q": "How do I cancel auto-renewal?",
-      "a": "Go to Settings > My Subscriptions > choose your plan > tap Cancel Subscription. Auto-renewal will be turned off at the end of the current period."
+      "q": "Does BO CHAT share user data with third parties?",
+      "a": "BOCHAT does not share user data with third parties for marketing, personal data analysis, or any commercial purposes.\n\nUser data is handled with strict confidentiality and security, and is only disclosed when required by applicable law, such as in response to a valid court order or legal obligation.\n\nBOCHAT follows a strict privacy policy designed to protect user data and ensure it is not misused or shared without authorization."
     },
     {
-      "q": "Can I use the app for free?",
-      "a": "Yes, the app offers free basic features. There are also paid subscription plans for extra features like cloud storage and instant support."
+      "q": "What is BO CHAT used for?",
+      "a": "BOCHAT provides a comprehensive platform for instant communication, self-expression, and sharing messages and content easily and quickly, while maintaining a safe and organized environment.\n\nThe platform aims to enable users to build real and meaningful conversations, both personally and socially, while complying with community guidelines and applicable laws to ensure a responsible and reliable experience."
     },
     {
-      "q": "How can I report a technical issue?",
-      "a": "You can contact support via email at support@bo-chat.space or through the 'Submit a request' form inside the app."
+      "q": "Does BO CHAT use AI or machine learning algorithms to rank content?",
+      "a": "BOCHAT does not rely on artificial intelligence or machine learning algorithms to manipulate content ranking in a non-transparent way.\n\nThe platform provides a following feed that displays content in strict chronological order from accounts users choose to follow, ensuring a clear and unbiased experience.\n\nThe discovery section may use simple and transparent signals such as engagement and recency to help users discover new content, while maintaining transparency and avoiding manipulation of visibility."
+    },
+    {
+      "q": "Is BO CHAT available as a web or desktop application?",
+      "a": "Currently, BOCHAT focuses on providing a core experience through its mobile application to ensure the best performance and smooth communication.\n\nA web and desktop version is being considered for future development to expand accessibility and provide a more flexible experience across different devices."
+    },
+    {
+      "q": "Is BO CHAT a news platform?",
+      "a": "No, BOCHAT is not a news organization, media outlet, or editorial publisher.\n\nThe platform is primarily designed for user communication and content sharing, while users are responsible for the content they publish.\n\nBOCHAT aims to facilitate communication and free expression within a structured environment, without acting as a news distributor or media provider."
+    },
+    {
+      "q": "Is BO CHAT only for activists?",
+      "a": "No, BO CHAT is not limited to activists. It is designed for a wide range of users.\n\nThe platform serves individuals, creators, businesses, students, and general social media users, providing a flexible space for communication and interaction.\n\nBO CHAT welcomes all users who comply with community guidelines and applicable laws, aiming to build an inclusive and safe communication environment."
+    },
+    {
+      "q": "Is user data encrypted in BOCHAT?",
+      "a": "Yes, BOCHAT uses standard encryption technologies to protect user data during transmission (such as TLS) and when stored on servers.\n\nSensitive data such as passwords is encrypted using modern encryption methods to ensure a high level of security.\n\nPublic content within the platform is designed to be accessible to other users depending on its nature, while still being protected during transfer and storage.\n\nFuture enhancements may include optional end-to-end encryption for private messages, which will be announced when available.\n\nDespite strong security measures, no system can guarantee absolute protection, so users are responsible for keeping their login credentials secure and using strong passwords."
+    },
+    {
+      "q": "Will BO CHAT pay content creators?",
+      "a": "Yes, BO CHAT plans to introduce future tools that enable content creators to monetize their content on the platform.\n\nThese tools may include financial rewards, branded content opportunities, and mechanisms that allow communities to directly support creators.\n\nBO CHAT aims to support creativity and encourage high-quality content within the platform."
+    },
+    {
+      "q": "Where can I ask more questions?",
+      "a": "For additional inquiries, users can visit the BOCHAT Help Center or contact the official support team through the available in-app or website channels.\n\nThe platform also provides a dedicated help section with FAQs and usage guides to help users easily find information."
+    },
+    {
+      "q": "Is BO CHAT free to use?",
+      "a": "Yes, BO CHAT is free to use, with optional premium features that may be introduced in the future to enhance the experience."
+    },
+    {
+      "q": "Can I delete my BO CHAT account?",
+      "a": "Yes, users can delete their account at any time through the account settings, and data will be removed according to the privacy policy."
+    },
+    {
+      "q": "How can I report inappropriate content?",
+      "a": "BO CHAT provides an in-app reporting system that allows users to report any content that violates community guidelines."
+    },
+    {
+      "q": "Can I edit or delete my posts?",
+      "a": "Yes, users can edit or delete their content at any time through their account management interface."
+    },
+    {
+      "q": "Is BO CHAT safe for children?",
+      "a": "BO CHAT is committed to providing a safe environment, and additional protection policies may be applied for younger users or inappropriate content."
+    },
+    {
+      "q": "Is the platform updated regularly?",
+      "a": "Yes, BO CHAT is continuously developed to improve performance, add new features, and enhance the user experience."
     }
   ]
+
 }
 
 

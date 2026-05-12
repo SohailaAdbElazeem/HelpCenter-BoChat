@@ -17,7 +17,7 @@ import Invest from "./components/Invest/Invest";
 import Developers from "./components/Developers/Developers";
 import { SearchProvider } from "./Context/SearchContext";
 import ArticleDetails from "./components/ArticleDetails/ArticleDetails";
-// import ArticlesByCategory from "./components/ArticlesByCategory/ArticlesByCategory";
+import ArticlesByCategory from "./components/ArticlesByCategory/ArticlesByCategory";
  const Router = createBrowserRouter([
 	{
 		path: "",
@@ -25,21 +25,21 @@ import ArticleDetails from "./components/ArticleDetails/ArticleDetails";
 		children: [
 			{ path: "", element: <Home /> },
 			{ path: "Home", element: <Home /> },
-			{ path: "specialtiesAndSecurity", element: <SpecialtiesAndSecurity /> },
-			{ path: "smartFeatures", element: <SmartFeatures /> },
-			{ path: "personalizeExp", element: <PersonalizeExp /> },
-			{ path: "quickstart", element: <Quickstart /> },
-			{ path: "accountSettings", element: <AccountSettings /> },
-			{ path: "subscriptions", element: <Subscriptions /> },
+			// { path: "specialtiesAndSecurity", element: <SpecialtiesAndSecurity /> },
+			// { path: "smartFeatures", element: <SmartFeatures /> },
+			// { path: "personalizeExp", element: <PersonalizeExp /> },
+			// { path: "quickstart", element: <Quickstart /> },
+			// { path: "accountSettings", element: <AccountSettings /> },
+			// { path: "subscriptions", element: <Subscriptions /> },
 			{ path: "FAQs", element: <FAQ /> },
 			{ path: "joinUs", element: <JoinUs /> },
 			{ path: "formpage", element: <FormPage /> },
-			{ path: "Ambassadors", element: <Ambassadors/> },
-			{ path: "Invest", element: <Invest/> },
-			{ path: "Developers", element: <Developers/> },
+			// { path: "Ambassadors", element: <Ambassadors/> },
+			// { path: "Invest", element: <Invest/> },
+			// { path: "Developers", element: <Developers/> },
 			{ path: "newAccount", element: <NewAccount /> },
 			{ path: "/article/:id", element: <ArticleDetails/> },
- 			// {path:"/category/:ctg", element:<ArticlesByCategory/>}
+ 			{path:"/category/:ctg", element:<ArticlesByCategory/>}
 
 
 		],
