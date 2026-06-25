@@ -34,8 +34,8 @@ const ArticlesByCategory = () => {
   // عنوان التصنيف
   const categoryTitle = useMemo(() => {
     const key = categoriesMap[ctg];
-    if (!key) return isLTR ? "Articles" : "مقالات";
-
+    // if (!key) return isLTR ? "Articles" : "مقالات";
+if (!key) return i18n.language === "en" ? "Articles" : "مقالات";
     const translation = t(`categories.${key}`);
 
     if (!translation || translation === `categories.${key}`) {
