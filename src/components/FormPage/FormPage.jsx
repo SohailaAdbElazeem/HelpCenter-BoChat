@@ -1,26 +1,36 @@
 // import React, { useState } from "react";
 // import { useTranslation } from "react-i18next";
-// import "./FormPage.modules.css"
+// import "./FormPage.modules.css";
+
 // export default function FormPage() {
 // 	const { t, i18n } = useTranslation();
 // 	const [showToast, setShowToast] = useState(false);
 // 	const [toastMessage, setToastMessage] = useState("");
 // 	const [toastType, setToastType] = useState("success");
+// 	const [isSubmitting, setIsSubmitting] = useState(false);
 // 	const isLTR = i18n.language === "en";
 
 // 	const [formData, setFormData] = useState({
 // 		email: "",
-// 		address: "",
-// 		description: "",
-// 		file: null,
+// 		title: "",
+// 		desc: "",
+// 		img: null,
 // 	});
 
 // 	const [errors, setErrors] = useState({});
 
 // 	const handleInputChange = (e) => {
-// 		const { id, name, value, files } = e.target;
-// 		if (id === "uploadFile" || name === "uploadFile") {
-// 			setFormData({ ...formData, file: files?.[0] || null });
+// 		const { id, value, files } = e.target;
+// 		if (id === "uploadFile") {
+// 			const file = files?.[0] || null;
+// 			// Optional: validate file type (images only)
+// 			if (file && !file.type.startsWith("image/")) {
+// 				setErrors({ ...errors, img: t("formPage.errors.invalidImageType") });
+// 				setFormData({ ...formData, img: null });
+// 				return;
+// 			}
+// 			setFormData({ ...formData, img: file });
+// 			if (errors.img) setErrors({ ...errors, img: "" });
 // 		} else {
 // 			setFormData({ ...formData, [id]: value });
 // 		}
@@ -32,54 +42,86 @@
 // 	const validateForm = () => {
 // 		const newErrors = {};
 
-// 		// Validate email
 // 		if (!formData.email.trim()) {
 // 			newErrors.email = t("formPage.errors.emailRequired");
-// 		} else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-// 			newErrors.email = t("formPage.errors.emailInvalid");
 // 		}
 
-// 		// Validate address
-// 		if (!formData.address.trim()) {
-// 			newErrors.address = t("formPage.errors.addressRequired");
-// 		} else if (formData.address.trim().length < 3) {
-// 			newErrors.address = t("formPage.errors.addressTooShort");
+// 		if (!formData.title.trim()) {
+// 			newErrors.title = t("formPage.errors.addressRequired");
 // 		}
 
-// 		// Validate description
-// 		if (!formData.description.trim()) {
-// 			newErrors.description = t("formPage.errors.descriptionRequired");
-// 		} else if (formData.description.trim().length < 10) {
-// 			newErrors.description = t("formPage.errors.descriptionTooShort");
+// 		if (!formData.desc.trim()) {
+// 			newErrors.desc = t("formPage.errors.descriptionRequired");
 // 		}
+
+// 		// if (!formData.img) {
+// 		// 	newErrors.img = t("formPage.errors.fileRequired");
+// 		// }
 
 // 		setErrors(newErrors);
-// 		return Object.keys(newErrors).length === 0;
+// 		return newErrors; // ✅ مهم جدًا
 // 	};
-
 // 	const showToastMessage = (message, type = "success") => {
 // 		setToastMessage(message);
 // 		setToastType(type);
 // 		setShowToast(true);
-// 		setTimeout(() => {
-// 			setShowToast(false);
-// 		}, 5000);
+// 		setTimeout(() => setShowToast(false), 5000);
 // 	};
 
-// 	const handleSubmit = () => {
-// 		if (validateForm()) {
-// 			console.log("Form submitted:", formData);
-// 			showToastMessage(t("formPage.successMessage"), "success");
-// 		} else {
-// 			// Form has errors
-// 			const errorCount = Object.keys(errors).length;
-// 			showToastMessage(
-// 				t("formPage.errors.missingFields", { count: errorCount }),
-// 				"error",
-// 			);
-// 		}
-// 	};
 
+// 	const handleSubmit = async () => {
+//     const validationErrors = validateForm();
+//     const errorCount = Object.keys(validationErrors).length;
+
+//     if (errorCount > 0) {
+//         showToastMessage(
+//             t("formPage.errors.missingFields", { count: errorCount }),
+//             "error",
+//         );
+//         return;
+//     }
+
+//     setIsSubmitting(true);
+
+//     try {
+//         const formDataToSend = new FormData();
+//         formDataToSend.append("email", formData.email);
+//         formDataToSend.append("title", formData.title);
+//         formDataToSend.append("desc", formData.desc);
+//         formDataToSend.append("image", formData.img);   
+ 
+//         // Optional: log to verify
+//         for (let pair of formDataToSend.entries()) {
+//             console.log(pair[0], pair[1]);
+//         }
+
+//         const response = await fetch(
+//             "https://bo-chat.space/dashboard/features/SendHelpRequest",
+//             {
+//                 method: "POST",
+//                 body: formDataToSend,
+//             }
+//         );
+
+//         // Try to parse response even on error (for better debugging)
+//         const data = await response.json().catch(() => null);
+
+//         if (response.ok && data?.success) {
+//             showToastMessage(t("formPage.successMessage"), "success");
+//             setFormData({ email: "", title: "", desc: "", img: null });
+//             setErrors({});
+//         } else {
+//             // Show actual server error message if available
+//             const errorMsg = data?.message || data?.error || t("formPage.errors.submitFailed");
+//             throw new Error(errorMsg);
+//         }
+//     } catch (error) {
+//         console.error("Submit error:", error);
+//         showToastMessage(error.message, "error");
+//     } finally {
+//         setIsSubmitting(false);
+//     }
+// };
 // 	const getToastStyles = () => {
 // 		const baseStyles = {
 // 			position: "fixed",
@@ -88,25 +130,9 @@
 // 			left: isLTR ? "clamp(10px, 5vw, 30px)" : "auto",
 // 			zIndex: 9999,
 // 		};
-
 // 		const backgroundColor = "rgba(255, 255, 255, 0.70)";
 // 		const textColor = "#D72229";
-// 		let borderColor = "";
-
-// 		switch (toastType) {
-// 			case "success":
-// 				borderColor = "#D72229";
-// 				break;
-// 			case "error":
-// 				borderColor = "#D72229";
-// 				break;
-// 			case "warning":
-// 				borderColor = "#D72229";
-// 				break;
-// 			default:
-// 				borderColor = "#D72229";
-// 		}
-
+// 		const borderColor = "#D72229";
 // 		return { baseStyles, backgroundColor, textColor, borderColor };
 // 	};
 
@@ -128,7 +154,6 @@
 // 				className="w-100"
 // 				style={{ maxWidth: "min(1100px, 95%)", margin: "0 auto" }}
 // 			>
-// 				{/* Title */}
 // 				<div className="text-center mb-5">
 // 					<h2
 // 						style={{
@@ -144,7 +169,8 @@
 // 						{t("formPage.title")}
 // 					</h2>
 // 				</div>
-// 				<form  className="custom-form">
+
+// 				<form className="custom-form">
 // 					{/* Email */}
 // 					<div className="mb-4">
 // 						<label
@@ -195,10 +221,10 @@
 // 						)}
 // 					</div>
 
-// 					{/* Address */}
+// 					{/* Title */}
 // 					<div className="mb-4">
 // 						<label
-// 							htmlFor="address"
+// 							htmlFor="title"
 // 							style={{
 // 								fontFamily: "'Cairo', sans-serif",
 // 								fontWeight: 600,
@@ -214,9 +240,9 @@
 // 						</label>
 // 						<input
 // 							type="text"
-// 							id="address"
-// 							name="address"
-// 							value={formData.address}
+// 							id="title"
+// 							name="title"
+// 							value={formData.title}
 // 							onChange={handleInputChange}
 // 							className="form-control"
 // 							style={{
@@ -225,13 +251,13 @@
 // 								borderRadius: "clamp(16px, 4vw, 22px)",
 // 								background: "rgba(255, 255, 255, 0.9)",
 // 								backdropFilter: "blur(15px)",
-// 								border: errors.address ? "2px solid #D72229" : "none",
+// 								border: errors.title ? "2px solid #D72229" : "none",
 // 								padding: "0 clamp(15px, 4vw, 25px)",
 // 								fontSize: "clamp(14px, 3.5vw, 18px)",
 // 								textAlign: isLTR ? "left" : "right",
 // 							}}
 // 						/>
-// 						{errors.address && (
+// 						{errors.title && (
 // 							<div
 // 								style={{
 // 									color: "#D72229",
@@ -241,7 +267,7 @@
 // 									fontFamily: "'Cairo', sans-serif",
 // 								}}
 // 							>
-// 								{errors.address}
+// 								{errors.title}
 // 							</div>
 // 						)}
 // 					</div>
@@ -249,7 +275,7 @@
 // 					{/* Description */}
 // 					<div className="mb-4">
 // 						<label
-// 							htmlFor="description"
+// 							htmlFor="desc"
 // 							style={{
 // 								fontFamily: "'Cairo', sans-serif",
 // 								fontWeight: 600,
@@ -274,9 +300,9 @@
 // 							{t("formPage.descriptionHint")}
 // 						</p>
 // 						<textarea
-// 							id="description"
-// 							name="description"
-// 							value={formData.description}
+// 							id="desc"
+// 							name="desc"
+// 							value={formData.desc}
 // 							onChange={handleInputChange}
 // 							rows={8}
 // 							className="form-control"
@@ -286,14 +312,14 @@
 // 								borderRadius: "clamp(16px, 4vw, 22px)",
 // 								background: "rgba(255, 255, 255, 0.9)",
 // 								backdropFilter: "blur(15px)",
-// 								border: errors.description ? "2px solid #D72229" : "none",
+// 								border: errors.desc ? "2px solid #D72229" : "none",
 // 								padding: "clamp(15px, 3vw, 25px)",
 // 								fontSize: "clamp(14px, 3.5vw, 18px)",
 // 								textAlign: isLTR ? "left" : "right",
 // 								resize: "vertical",
 // 							}}
 // 						/>
-// 						{errors.description && (
+// 						{errors.desc && (
 // 							<div
 // 								style={{
 // 									color: "#D72229",
@@ -303,12 +329,12 @@
 // 									fontFamily: "'Cairo', sans-serif",
 // 								}}
 // 							>
-// 								{errors.description}
+// 								{errors.desc}
 // 							</div>
 // 						)}
 // 					</div>
 
-// 					{/* File Upload */}
+// 					{/* File Upload - now required */}
 // 					<div className="mb-5">
 // 						<label
 // 							htmlFor="uploadFile"
@@ -322,7 +348,8 @@
 // 								marginBottom: "12px",
 // 							}}
 // 						>
-// 							{t("formPage.attachments")}
+// 							{t("formPage.attachments")}{" "}
+// 							<span style={{ color: "#D72229" }}>*</span>
 // 						</label>
 
 // 						<label
@@ -334,8 +361,8 @@
 // 								minHeight: "clamp(60px, 10vh, 70px)",
 // 								borderRadius: "clamp(16px, 4vw, 22px)",
 // 								background: "#FFFFFFE5",
-// 								border: errors.file
-// 									? "2px dashed #D72229"
+// 								border: errors.img
+// 									? "2px solid #D72229"
 // 									: "1px dashed #00000080",
 // 								backdropFilter: "blur(15px)",
 // 								cursor: "pointer",
@@ -346,17 +373,18 @@
 // 								padding: "clamp(10px, 3vw, 20px)",
 // 							}}
 // 						>
-// 							{formData.file ? formData.file.name : t("formPage.uploadHint")}
+// 							{formData.img ? formData.img.name : t("formPage.uploadHint")}
 // 						</label>
 
 // 						<input
 // 							type="file"
 // 							id="uploadFile"
 // 							name="uploadFile"
+// 							accept="image/*"
 // 							style={{ display: "none" }}
 // 							onChange={handleInputChange}
 // 						/>
-// 						{errors.file && (
+// 						{errors.img && (
 // 							<div
 // 								style={{
 // 									color: "#D72229",
@@ -366,7 +394,7 @@
 // 									fontFamily: "'Cairo', sans-serif",
 // 								}}
 // 							>
-// 								{errors.file}
+// 								{errors.img}
 // 							</div>
 // 						)}
 // 					</div>
@@ -375,6 +403,7 @@
 // 					<div className="text-center mt-5">
 // 						<button
 // 							type="button"
+// 							disabled={isSubmitting}
 // 							style={{
 // 								width: "min(400px, 85%)",
 // 								minHeight: "clamp(50px, 8vh, 60px)",
@@ -385,22 +414,29 @@
 // 								fontWeight: 600,
 // 								fontSize: "clamp(16px, 4vw, 22px)",
 // 								border: "none",
-// 								cursor: "pointer",
+// 								cursor: isSubmitting ? "not-allowed" : "pointer",
 // 								backdropFilter: "blur(15px)",
 // 								boxShadow: "0 4px 15px rgba(215, 34, 41, 0.3)",
 // 								transition: "all 0.3s ease",
+// 								opacity: isSubmitting ? 0.7 : 1,
 // 							}}
 // 							onClick={handleSubmit}
 // 							onMouseEnter={(e) => {
-// 								e.target.style.transform = "translateY(-2px)";
-// 								e.target.style.boxShadow = "0 6px 20px rgba(215, 34, 41, 0.4)";
+// 								if (!isSubmitting) {
+// 									e.currentTarget.style.transform = "translateY(-2px)";
+// 									e.currentTarget.style.boxShadow =
+// 										"0 6px 20px rgba(215, 34, 41, 0.4)";
+// 								}
 // 							}}
 // 							onMouseLeave={(e) => {
-// 								e.target.style.transform = "translateY(0)";
-// 								e.target.style.boxShadow = "0 4px 15px rgba(215, 34, 41, 0.3)";
+// 								e.currentTarget.style.transform = "translateY(0)";
+// 								e.currentTarget.style.boxShadow =
+// 									"0 4px 15px rgba(215, 34, 41, 0.3)";
 // 							}}
 // 						>
-// 							{t("formPage.submit")}
+// 							{isSubmitting
+// 								? t("formPage.submitting") || "جاري الإرسال..."
+// 								: t("formPage.submit")}
 // 						</button>
 // 					</div>
 // 				</form>
@@ -443,7 +479,7 @@
 // 									display: "flex",
 // 									alignItems: "center",
 // 									justifyContent: "center",
-// 									lineHeight: "1",
+// 									lineHeight: 1,
 // 									paddingBottom: "2px",
 // 									boxSizing: "border-box",
 // 									flexShrink: 0,
@@ -451,7 +487,6 @@
 // 							>
 // 								×
 // 							</button>
-
 // 							<div
 // 								style={{
 // 									flex: 1,
@@ -470,17 +505,20 @@
 // 	);
 // }
 
+// ///////////////////////
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./FormPage.modules.css";
 
 export default function FormPage() {
 	const { t, i18n } = useTranslation();
+
+	const isLTR = i18n.language === "en";
+
 	const [showToast, setShowToast] = useState(false);
 	const [toastMessage, setToastMessage] = useState("");
 	const [toastType, setToastType] = useState("success");
 	const [isSubmitting, setIsSubmitting] = useState(false);
-	const isLTR = i18n.language === "en";
 
 	const [formData, setFormData] = useState({
 		email: "",
@@ -491,27 +529,63 @@ export default function FormPage() {
 
 	const [errors, setErrors] = useState({});
 
-	const handleInputChange = (e) => {
-		const { id, value, files } = e.target;
-		if (id === "uploadFile") {
-			const file = files?.[0] || null;
-			// Optional: validate file type (images only)
-			if (file && !file.type.startsWith("image/")) {
-				setErrors({ ...errors, img: t("formPage.errors.invalidImageType") });
-				setFormData({ ...formData, img: null });
-				return;
-			}
-			setFormData({ ...formData, img: file });
-			if (errors.img) setErrors({ ...errors, img: "" });
-		} else {
-			setFormData({ ...formData, [id]: value });
-		}
-		if (errors[id]) {
-			setErrors({ ...errors, [id]: "" });
-		}
+ 	// TOAST
+	const showToastMessage = (message, type = "success") => {
+		setToastMessage(message);
+		setToastType(type);
+		setShowToast(true);
+
+		setTimeout(() => {
+			setShowToast(false);
+		}, 5000);
 	};
 
-	const validateForm = () => {
+ 	// HANDLE INPUT CHANGE
+ 	const handleInputChange = (e) => {
+		const { id, value, files } = e.target;
+
+		// FILE INPUT
+		if (files) {
+			const file = files[0];
+
+			console.log("SELECTED FILE => ", file);
+
+			if (file && !file.type.startsWith("image/")) {
+				setErrors((prev) => ({
+					...prev,
+					img: t("formPage.errors.invalidImageType"),
+				}));
+
+				return;
+			}
+
+			setFormData((prev) => ({
+				...prev,
+				img: file,
+			}));
+
+			setErrors((prev) => ({
+				...prev,
+				img: "",
+			}));
+
+			return;
+		}
+
+		// NORMAL INPUTS
+		setFormData((prev) => ({
+			...prev,
+			[id]: value,
+		}));
+
+		setErrors((prev) => ({
+			...prev,
+			[id]: "",
+		}));
+	};
+
+ 	// VALIDATION
+ 	const validateForm = () => {
 		const newErrors = {};
 
 		if (!formData.email.trim()) {
@@ -531,57 +605,84 @@ export default function FormPage() {
 		}
 
 		setErrors(newErrors);
-		return newErrors; // ✅ مهم جدًا
-	};
-	const showToastMessage = (message, type = "success") => {
-		setToastMessage(message);
-		setToastType(type);
-		setShowToast(true);
-		setTimeout(() => setShowToast(false), 5000);
+
+		return newErrors;
 	};
 
-	const handleSubmit = async () => {
+ 	// SUBMIT
+ 	const handleSubmit = async (e) => {
+		e.preventDefault();
+
 		const validationErrors = validateForm();
-		const errorCount = Object.keys(validationErrors).length;
 
-		if (errorCount > 0) {
+		if (Object.keys(validationErrors).length > 0) {
 			showToastMessage(
-				t("formPage.errors.missingFields", { count: errorCount }),
+				t("formPage.errors.missingFields", {
+					count: Object.keys(validationErrors).length,
+				}),
 				"error",
 			);
+
 			return;
 		}
 
-		setIsSubmitting(true);
-
 		try {
-			const formDataToSend = new FormData();
-			formDataToSend.append("email", formData.email);
-			formDataToSend.append("title", formData.title);
-			formDataToSend.append("desc", formData.desc);
-			formDataToSend.append("file", formData.img);
-			for (let pair of formDataToSend.entries()) {
+			setIsSubmitting(true);
+
+			console.log("FORM DATA => ", formData);
+
+			const sendData = new FormData();
+
+			sendData.append("email", formData.email);
+			sendData.append("title", formData.title);
+			sendData.append("desc", formData.desc);
+
+			// IMPORTANT
+			sendData.append("file", formData.img);
+			// sendData.append("image", formData.img);
+
+			// DEBUG
+			for (const pair of sendData.entries()) {
 				console.log(pair[0], pair[1]);
 			}
+
 			const response = await fetch(
 				"https://bo-chat.space/dashboard/features/SendHelpRequest",
 				{
 					method: "POST",
-					body: formDataToSend,
+					body: sendData,
 				},
 			);
 
 			const data = await response.json();
 
+			console.log("STATUS => ", response.status);
+			console.log("RESPONSE => ", data);
+
 			if (response.ok && data.success) {
-				showToastMessage(t("formPage.successMessage"), "success");
-				setFormData({ email: "", title: "", desc: "", img: null });
+				showToastMessage(
+					t("formPage.successMessage") || "تم الإرسال بنجاح",
+					"success",
+				);
+
+				setFormData({
+					email: "",
+					title: "",
+					desc: "",
+					img: null,
+				});
+
 				setErrors({});
 			} else {
-				throw new Error(data.message || t("formPage.errors.submitFailed"));
+				throw new Error(
+					data.response ||
+						data.message ||
+						t("formPage.errors.submitFailed"),
+				);
 			}
 		} catch (error) {
-			console.error("Submit error:", error);
+			console.error("SUBMIT ERROR => ", error);
+
 			showToastMessage(
 				error.message || t("formPage.errors.submitFailed"),
 				"error",
@@ -591,24 +692,29 @@ export default function FormPage() {
 		}
 	};
 
+ 	// TOAST STYLES
 	const getToastStyles = () => {
-		const baseStyles = {
-			position: "fixed",
-			top: "clamp(10px, 5vh, 50px)",
-			right: isLTR ? "auto" : "clamp(10px, 5vw, 30px)",
-			left: isLTR ? "clamp(10px, 5vw, 30px)" : "auto",
-			zIndex: 9999,
-		};
-		const backgroundColor = "rgba(255, 255, 255, 0.70)";
-		const textColor = "#D72229";
-		const borderColor = "#D72229";
-		return { baseStyles, backgroundColor, textColor, borderColor };
+	const baseStyles = {
+		position: "fixed",
+		top: "clamp(10px, 5vh, 50px)",
+		right: isLTR ? "auto" : "clamp(10px, 5vw, 30px)",
+		left: isLTR ? "clamp(10px, 5vw, 30px)" : "auto",
+		zIndex: 9999,
 	};
+
+	const isSuccess = toastType === "success";
+
+	const backgroundColor = "rgba(255, 255, 255, 0.70)";
+	const textColor = isSuccess ? "#1B8F3A" : "#D72229";
+	const borderColor = isSuccess ? "#1B8F3A" : "#D72229";
+
+	return { baseStyles, backgroundColor, textColor, borderColor };
+};
 
 	const { baseStyles, backgroundColor, textColor, borderColor } =
 		getToastStyles();
 
-	return (
+		return (
 		<div
 			className="min-vh-100 d-flex align-items-center justify-content-center p-4"
 			style={{
@@ -905,7 +1011,8 @@ export default function FormPage() {
 						>
 							{isSubmitting
 								? t("formPage.submitting") || "جاري الإرسال..."
-								: t("formPage.submit")}
+								: t("formPage.submit")
+								}
 						</button>
 					</div>
 				</form>

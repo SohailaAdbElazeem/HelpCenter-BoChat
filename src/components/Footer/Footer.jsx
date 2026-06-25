@@ -19,17 +19,17 @@ export default function Footer() {
 					<ul>
 						 
 						<li>
-							<a href="https://bo-eg.site/PandaOracle.html">
+							<a href="https://bo-eg.online/PandaOracle.html">
 								{t("footer.company.about")}
 							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/ContactUs.html">
+							<a href="https://bo-eg.online/ContactUs.html">
 								{t("footer.company.contact")}
 							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/AboutUs.html">
+							<a href="https://bo-eg.online/AboutUs.html">
 								{t("footer.company.info")}
 							</a>
 						</li>
@@ -70,32 +70,32 @@ export default function Footer() {
 					<h3>{t("footer.legal.title")}</h3>
 					<ul>
 						<li>
-							<a href="https://bo-eg.site/PrivacyPolicies.html">
+							<a href="https://bo-eg.online/PrivacyPolicies.html">
 								{t("footer.legal.privacy")}
 							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/SocialGuiedLines.html">
+							<a href="https://bo-eg.online/SocialGuiedLines.html">
 								{t("footer.legal.guidelines")}
 							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/BoShield.html">
+							<a href="https://bo-eg.online/CopyrightPolicy.html">
 								{t("footer.legal.copyright")}
 							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/PrivacyCenter.html">
+							<a href="https://bo-eg.online/PrivacyCenter.html">
 								{t("footer.legal.privacyCenter")}
 							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/BoShield.html">
+							<a href="https://bo-eg.online/BoShield.html">
 								{t("footer.legal.Shield")}
 							</a>
 						</li>
 						<li>
-							<a href="https://bo-eg.site/ProfitsSystem.html">
+							<a href="https://bo-eg.online/ProfitsSystem.html">
 								{t("footer.legal.Profit")}
 							</a>
 						</li>

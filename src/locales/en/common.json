@@ -195,6 +195,7 @@
     "attachments": "Attachments",
     "uploadHint": "Click to upload or drag files here",
     "submit": "Submit",
+    "submitting": "Submitting...",
     "successMessage": "✓ Submitted successfully!",
     "errors": {
       "missingFields": "{{count}} required field is missing. Please fill all required fields.",
